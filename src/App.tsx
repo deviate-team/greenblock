@@ -1,9 +1,11 @@
-const App = () => {
-  return (
-    <div>
-      <h1>React TypeScript Webpack Starter Template</h1>
-    </div>
-  );
-}
+import Layout from "./layouts/Layout";
 
-export default App;
+export default function App() {
+  return (
+    <Layout>
+      <div className="mt-32 flex flex-col">
+        Green Block
+      </div>
+    </Layout>
+  )
+}
