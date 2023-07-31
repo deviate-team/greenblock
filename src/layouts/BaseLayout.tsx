@@ -4,13 +4,13 @@ import Navbar from "@/components/Navbar";
 
 const BaseLayout = () => {
     return (
-        <>
+        <div className="flex flex-col min-h-screen">
             <Navbar />
-            <div className="py-36">
+            <div className="py-36 flex-1">
                 <Outlet />
             </div>
             <Footer />
-        </>
+        </div>
     );
 };
 
