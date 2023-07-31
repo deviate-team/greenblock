@@ -1,57 +1,26 @@
-export default function Footer() {
+const Footer = () => {
     return (
-        <footer className="bg-main-color">
-            <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-                <div className="md:flex md:justify-between">
-                    <div className="mb-6 md:mb-0">
-                        <a href="/" className="items-center">
-                            <img src="/Logo.webp" className="h-22 w-36" alt="Logo" />
-                            <h2 className="text-sm font-semibold text-white">© 2023 Deviate Teams</h2>
-                        </a>
-                    </div>
-                    <div className="grid grid-cols-2 gap-8 sm:gap-10 sm:grid-cols-3">
-                        <div>
-                            <h2 className="mb-4 text-lg font-semibold text-white uppercase">App</h2>
-                            <ul className="text-white font-medium space-y-3">
-                                <li>
-                                    <a href="/" className="hover:underline">Swap</a>
-                                </li>
-                                <li>
-                                    <a href="/" className="hover:underline">Token</a>
-                                </li>
-                                <li>
-                                    <a href="/" className="hover:underline">NFTs</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="mb-4 text-lg font-semibold text-white uppercase">Protocol</h2>
-                            <ul className="text-white font-medium space-y-3">
-                                <li>
-                                    <a href="/" className="hover:underline ">Community</a>
-                                </li>
-                                <li>
-                                    <a href="/" className="hover:underline">Governance</a>
-                                </li>
-                                <li>
-                                    <a href="/" className="hover:underline">Developer</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h2 className="mb-4 text-lg font-semibold text-white uppercase">Get Help</h2>
-                            <ul className="text-white font-medium space-y-3">
-                                <li>
-                                    <a href="#" className="hover:underline">Contact us</a>
-                                </li>
-                                <li>
-                                    <a href="#" className="hover:underline">Help Center</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+        <footer className="bg-white rounded-lg shadow">
+            <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+                <span className="text-sm text-gray-500 sm:text-center font-IBM">© 2023 <a href="/" className="hover:underline">Deviate™</a>. All Rights Reserved.
+                </span>
+                <ul className="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 sm:mt-0 font-BAI">
+                    <li>
+                        <a href="#" className="mr-4 hover:underline md:mr-6 ">About</a>
+                    </li>
+                    <li>
+                        <a href="#" className="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="#" className="mr-4 hover:underline md:mr-6">Licensing</a>
+                    </li>
+                    <li>
+                        <a href="#" className="hover:underline">Contact</a>
+                    </li>
+                </ul>
             </div>
         </footer>
     )
 }
+
+export default Footer

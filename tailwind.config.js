@@ -7,11 +7,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'main-color': '#2C3333',
-        'second-color': '#2E4F4F',
-        'third-color': '#0E8388',
-        'hover-color': '#CBE4DE',
+        'primary-color': '#064420',
+        'secondary-color': '#E4EFE7',
+        'primary-hover-color': '#FAF1E6',
+        'secondary-hover-color': '#FDFAF6',
     },
+    fontFamily: {
+      'IBM' : ['IBM Plex Sans', 'sans-serif'],
+      'BAI' : ['Bai Jamjuree', 'sans-serif']
+    }
     },
   },
   plugins: [],
