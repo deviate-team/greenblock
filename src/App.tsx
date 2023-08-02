@@ -2,10 +2,11 @@ import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
+import MarketplacePage from "@/pages/MarketplacePage";
+import RegisterPage from "@/pages/RegisterPage";
+import SwapPage from "@/pages/SwapPage";
 import TicketPage from "@/pages/TicketPage";
-import MarketplacePage from "./pages/MarketplacePage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SwapPage from "./pages/SwapPage";
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
