@@ -13,6 +13,14 @@ export const Link: ILink[] = [
         "title": 'Ticket',
     },
     {
+        pathName: '/buy-offsets',
+        title: 'Buy Offsets',
+    },
+    {
+        pathName: '/marketplace',
+        title: 'Marketplace',
+    },
+    {
         "pathName": '/history',
         "title": 'History',
     },
@@ -23,5 +31,5 @@ export const Link: ILink[] = [
     {
         "pathName": '/contact',
         "title": 'Contact',
-    }
+    },
 ]
