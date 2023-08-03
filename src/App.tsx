@@ -32,6 +32,7 @@ const App = () => {
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history-detail" element={<HistoryDetailPage />} />
+          
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
