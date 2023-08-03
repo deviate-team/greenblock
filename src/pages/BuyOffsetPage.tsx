@@ -24,7 +24,7 @@ const BuyOffSetPage = () => {
 
   return (
     <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
-      <div className="h-72 relative rounded-2xl bg-red-100">
+      <div className="h-60 md:h-72 relative rounded-2xl bg-red-100">
         <div className="block h-full relative">
           <img
             src={buyOffset?.image}
@@ -33,7 +33,7 @@ const BuyOffSetPage = () => {
           />
         </div>
       </div>
-      <div className="space-y-4 mt-6 px-8">
+      <div className="space-y-4 mt-6 px-2 md:px-6 lg:px-8">
         <h1 className="text-4xl">{buyOffset?.project_name}</h1>
         <p className="text-lg font-medium">By {buyOffset?.owner}</p>
         <div>
