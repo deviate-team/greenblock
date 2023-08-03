@@ -1,9 +1,11 @@
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
 import ContactPage from "@/pages/ContactPage";
+import HistoryPage from "@/pages/HistoryPage";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
 import MarketplacePage from "@/pages/MarketplacePage";
+import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
 import TicketPage from "@/pages/TicketPage";
@@ -19,6 +21,8 @@ const App = () => {
           <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/marketplace/:id" element={<SwapPage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/history" element={<HistoryPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />

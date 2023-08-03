@@ -13,6 +13,14 @@ export const Link: ILink[] = [
         "title": 'Ticket',
     },
     {
+        "pathName": '/history',
+        "title": 'History',
+    },
+    {
+        "pathName": '/profile',
+        "title": 'Profile',
+    },
+    {
         "pathName": '/contact',
         "title": 'Contact',
     }

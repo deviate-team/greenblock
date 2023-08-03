@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <footer className="bg-white rounded-lg shadow">
+        <footer className="bg-white rounded-lg shadow pt-5">
             <div className="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
                 <span className="text-sm text-gray-500 sm:text-center font-IBM">© 2023 <a href="/" className="hover:underline">Deviate™</a>. All Rights Reserved.
                 </span>
