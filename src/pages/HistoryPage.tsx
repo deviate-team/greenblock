@@ -1,6 +1,10 @@
+import HistoryTable from "@/components/HistoryTable"
+
 const HistoryPage = () => {
     return (
-        <div>History Page</div>
+        <div>
+            <HistoryTable />
+        </div>
     )
 }
 

@@ -1,4 +1,5 @@
 import { IRegisterForm } from "@/interfaces/form";
+import { userService } from "@/services/user.services";
 import { useState } from "react";
 import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 
@@ -18,8 +19,9 @@ const RegisterPage = () => {
         setUser({ ...user, birthDate: birthDateValue });
     }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
+        await userService.register(user.email, user.firstName, user.middleName, user.lastName, user.birthDate, user.username, user.password, user.confirmPassword);
     }
 
     return (
