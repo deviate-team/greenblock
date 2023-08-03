@@ -18,20 +18,19 @@ const TicketCard = ({ ticket }: { ticket: ITicket }) => {
                 </div>
                 <div className="mt-2 flex sm:flex-row mx-6 sm:justify-between flex-wrap ">
                     <div className="flex flex-row place-items-center p-2">
-                        <img src={ticket.provider.logo} className=" w-14 h-14" />
+                        <img src="https://static.vecteezy.com/system/resources/previews/000/511/437/original/travel-tourism-logo-isolated-on-white-background-vector.jpg" className=" w-14 h-14" />
                         <div className="flex flex-col ml-2">
                             <p className="text-xs text-gray-500 font-bold">{ticket.provider.name}</p>
-                            <p className="text-xs text-gray-500">{ticket.ticket_id}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-col p-2">
                         <p className="font-bold">{formatTime(ticket.depart_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">{ticket.depart_location}</span></p>
+                        <p className="text-gray-500"><span className="font-bold">Market Street</span></p>
                     </div>
                     <div className="flex flex-col flex-wrap p-2">
                         <p className="font-bold">{formatTime(ticket.arrive_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">{ticket.arrive_location}</span></p>
+                        <p className="text-gray-500"><span className="font-bold">Los Angeles Police Department</span></p>
                     </div>
                 </div>
                 <div className="mt-4 bg-gray-100 flex flex-row flex-wrap md:flex-nowrap justify-between items-baseline">

@@ -1,20 +1,25 @@
 export interface ITicket {
-    id: number;
-    ticket_id: string;
+    _id: string;
     title: string;
     description: string;
-    depart_location: string;
-    arrive_location: string;
+    depart_location: ILocation
+    arrive_location: ILocation;
     date: string;
     depart_time: string;
     arrive_time: string;
     standard_price: number;
     business_price: number;
     provider: IProvider;
+    createdAt: string;
+    updatedAt: string;
+}
+
+export interface ILocation {
+    latitude: number;
+    longitude: number;
 }
 
 export interface IProvider {
-    id: number;
     name: string;
     logo: string;
 }
