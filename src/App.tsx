@@ -1,5 +1,6 @@
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
+import ContactPage from "@/pages/ContactPage";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
 import MarketplacePage from "@/pages/MarketplacePage";
@@ -17,6 +18,7 @@ const App = () => {
           <Route path="/ticket" element={<TicketPage />} />
           <Route path="/marketplace" element={<MarketplacePage />} />
           <Route path="/marketplace/:id" element={<SwapPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
