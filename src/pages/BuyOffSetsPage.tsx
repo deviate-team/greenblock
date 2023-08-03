@@ -42,7 +42,7 @@ const BuyOffSetsPage = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <svg
+              <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
