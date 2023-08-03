@@ -18,7 +18,7 @@ const BuyOffSetsPage = () => {
               <h1 className="text-xl font-bold">{data.project_name}</h1>
               <p>By {data.owner}</p>
               <p>{formatDate(data.time_period.start)} - {formatDate(data.time_period.end)}</p>
-              <p>{data.price_by_unit}</p>
+              <p>${data.price_by_unit}</p>
               <div className="w-full h-3 border border-primary-color rounded-lg">
                 <div className="h-full bg-primary-color w-1/2 rounded-lg"></div>
               </div>

@@ -16,7 +16,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "michael.brown@example.com",
       tel: "987-654-3210",
     },
-    price_by_unit: "$150",
+    price_by_unit: 150,
     _id: "987654321",
     maximum: 25
   },
@@ -35,7 +35,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "emily.johnson@example.com",
       tel: "111-222-3333",
     },
-    price_by_unit: "$200",
+    price_by_unit: 200,
     _id: "456789123",
     maximum: 25
   },
@@ -54,7 +54,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "jessica.lee@example.com",
       tel: "444-555-6666",
     },
-    price_by_unit: "$80",
+    price_by_unit: 80,
     _id: "246813579",
     maximum: 25
   },
@@ -73,7 +73,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "william.johnson@example.com",
       tel: "777-888-9999",
     },
-    price_by_unit: "$120",
+    price_by_unit: 120,
     _id: "135792468",
     maximum: 25
   },
@@ -92,7 +92,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "olivia.taylor@example.com",
       tel: "222-333-4444",
     },
-    price_by_unit: "$180",
+    price_by_unit: 180,
     _id: "579246813",
     maximum: 25
   },
@@ -111,7 +111,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "emma.anderson@example.com",
       tel: "555-666-7777",
     },
-    price_by_unit: "$90",
+    price_by_unit: 90,
     _id: "753159852",
     maximum: 25
   },
@@ -130,7 +130,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "ethan.clark@example.com",
       tel: "909-876-5432",
     },
-    price_by_unit: "$210",
+    price_by_unit: 210,
     _id: "951753852",
     maximum: 25
   },
@@ -149,7 +149,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "noah.cooper@example.com",
       tel: "777-999-1111",
     },
-    price_by_unit: "$160",
+    price_by_unit: 160,
     _id: "369852147",
     maximum: 25
   },
@@ -168,7 +168,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "aiden.king@example.com",
       tel: "222-444-6666",
     },
-    price_by_unit: "$190",
+    price_by_unit: 190,
     _id: "852963741",
     maximum: 25
   },
@@ -187,7 +187,7 @@ export const buyOffsetsMockup: IBuyOffset[] = [
       email: "abigail.white@example.com",
       tel: "888-777-6666",
     },
-    price_by_unit: "$175",
+    price_by_unit: 175,
     _id: "456123789",
     maximum: 25
   },

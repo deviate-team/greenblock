@@ -13,6 +13,7 @@ import MarketplacePage from "@/pages/MarketplacePage";
 import TicketPage from "@/pages/TicketPage";
 import SwapPage from "@/pages/SwapPage";
 import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
+import BuyOffSetPage from "./pages/BuyOffsetPage";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/swap" element={<SwapPage />} />
           <Route path="/buy-offsets" element={<BuyOffSetsPage />} />
+          <Route path="/buy-offsets/:id" element={<BuyOffSetPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
