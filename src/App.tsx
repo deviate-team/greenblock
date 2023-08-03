@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
 import ContactPage from "@/pages/ContactPage";
+import HistoryDetailPage from "@/pages/HistoryDetailPage";
 import HistoryPage from "@/pages/HistoryPage";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/buy-offsets/:id" element={<BuyOffSetPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/history-detail" element={<HistoryDetailPage />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
