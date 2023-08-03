@@ -1,9 +1,10 @@
+import { ILoginForm } from "@/interfaces/form";
 import { userService } from "@/services/user.services";
 import { useState } from "react";
 
 const LoginPage = () => {
 
-    const [user, setUser] = useState({
+    const [user, setUser] = useState<ILoginForm>({
         email: '', password: ''
     });
 

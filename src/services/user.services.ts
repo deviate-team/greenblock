@@ -35,5 +35,14 @@ export const userService = {
             const message = (error as Error).message;
             throw new Error(message);
         }
+    },
+    async getUserProfile() {
+        try {
+            const response = await axiosInstance.get('/users/profile');
+            return response.data;
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
     }
 }
