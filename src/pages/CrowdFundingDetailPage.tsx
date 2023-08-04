@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import { formatDate } from "@/hooks/format";
 import { IProject } from "@/interfaces/project";
 import { projectService } from "@/services/projects.services";
@@ -43,12 +44,7 @@ const CrowdFundingDetailPage = () => {
     fetchData();
   }, [id, fetchProject]);
 
-  if (loading)
-    return (
-      <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
-        <p className="text-center">Loading..</p>
-      </div>
-    );
+  if (loading) return <Loading />;
 
   return (
     <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
