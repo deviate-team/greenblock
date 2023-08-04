@@ -1,7 +1,8 @@
-import { formatTime, formatTimestamp } from "@/hooks/format"
+import { extractDepartureAndArrival, formatTime, formatTimestamp } from "@/hooks/format"
 import { ITicketData } from "@/interfaces/ticket"
 
 const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
+    const { department, arrival } = extractDepartureAndArrival(ticket.title)
     return (
         <div className="mx-auto p-5 font-BAI">
             <div className="max-w-full bg-white flex flex-col rounded overflow-hidden shadow-lg">
@@ -11,10 +12,13 @@ const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
                     <p className="ml-2 font-normal text-gray-500">{formatTimestamp(ticket.date)}</p>
 
                 </div>
-                <div className="mt-2 flex justify-start bg-white p-2">
-                    <div className="flex mx-2 ml-6 h8 px-2 flex-row items-baseline rounded-full bg-gray-100 p-1">
+                <div className="mt-2 flex justify-between bg-white p-2">
+                    <div className="flex mx-2 ml-6 h-8 px-2 flex-row rounded-full bg-gray-100 p-1 justify-start items-center">
                         <img width="12" height="12" src="https://img.icons8.com/material/24/000000/bus--v2.png" />
-                        <p className="font-normal text-sm ml-1 text-gray-500">Economy</p>
+                        <p className="font-normal text-sm ml-1 text-gray-500">{ticket.title}</p>
+                    </div>
+                    <div className="flex justify-end mt-1 mr-5">
+                        <p className="font-bold text-sm text-gray-500 items-center">{ticket.seat_booked}/{ticket.seat_limit} was reserved</p>
                     </div>
                 </div>
                 <div className="mt-2 flex sm:flex-row mx-6 sm:justify-between flex-wrap ">
@@ -29,11 +33,11 @@ const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
 
                     <div className="flex flex-col p-2">
                         <p className="font-bold">{formatTime(ticket.depart_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">Bangkok</span></p>
+                        <p className="text-gray-500"><span className="font-bold">{department}</span></p>
                     </div>
                     <div className="flex flex-col flex-wrap p-2">
                         <p className="font-bold">{formatTime(ticket.arrive_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">Chiangmai</span></p>
+                        <p className="text-gray-500"><span className="font-bold">{arrival}</span></p>
                     </div>
                 </div>
                 <div className="mt-4 bg-gray-100 flex flex-row flex-wrap md:flex-nowrap justify-between items-baseline">
