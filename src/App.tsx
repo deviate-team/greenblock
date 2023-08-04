@@ -2,11 +2,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
-import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
-import BuyOffSetPage from "@/pages/BuyOffsetPage";
 import ConfirmPage from "@/pages/ConfirmPage";
 import ContactPage from "@/pages/ContactPage";
-import CreateOfferPage from "@/pages/CreateOfferPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
 import HistoryDetailPage from "@/pages/HistoryDetailPage";
 import HistoryPage from "@/pages/HistoryPage";
