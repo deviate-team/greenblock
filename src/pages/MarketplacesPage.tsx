@@ -31,6 +31,20 @@ const MarketplacePage = () => {
 
   return (
     <div className="container lg:max-w-screen-xl p-4 mx-auto font-BAI">
+        <div className="relative overflow-hidden w-full max-h-96 bg-fixed mb-10">
+        <img
+          src="/cc.jpg"
+          alt="Hero Image"
+          className="w-full h-full bg-opacity-5"
+        />
+        <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div>
+      </div>
+      <h1 className="text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center ">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+          Ticket
+        </span>{" "}
+        is now AVAILABLE
+      </h1>
       <h1 className="text-2xl font-BAI font-medium text-center mb-4">
         Marketplace
       </h1>
