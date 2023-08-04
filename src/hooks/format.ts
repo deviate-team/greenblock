@@ -12,3 +12,15 @@ export const formatDate = (time: string) => {
     const day = String(date.getDate()).padStart(2, "0");
     return `${day}/${month}/${year}`;
 }
+
+export const formatTimestamp = (timestamp: string): string => {
+    const date = new Date(timestamp);
+    const options: Intl.DateTimeFormatOptions = {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    };
+
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+};

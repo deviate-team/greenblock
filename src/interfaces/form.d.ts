@@ -5,6 +5,7 @@ export interface IRegisterForm {
     confirmPassword: string;
     firstName: string;
     middleName: string;
+    phoneNumber: string;
     lastName: string;
     birthDate: string;
 }
