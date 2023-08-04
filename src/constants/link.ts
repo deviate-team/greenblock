@@ -49,6 +49,9 @@ export const ProviderLink: ILink[] = [
     {
         "pathName": '/projects',
         "title": 'Projects',
+    },{
+        "pathName": '/create-project',
+        "title": 'Create Project',
     },
     {
         "pathName": '/marketplace',
