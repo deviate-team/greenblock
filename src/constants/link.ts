@@ -14,7 +14,7 @@ export const NonAuthUserLink: ILink[] = [
     },
     {
         "pathName": '/contract',
-        "title": 'contract',
+        "title": 'Contract',
     },
 ]
 
@@ -33,7 +33,7 @@ export const UserLink: ILink[] = [
     },
     {
         "pathName": '/contract',
-        "title": 'contract',
+        "title": 'Contract',
     },
 ]
 
@@ -59,6 +59,6 @@ export const ProviderLink: ILink[] = [
     },
     {
         "pathName": '/contract',
-        "title": 'contract',
+        "title": 'Contract',
     },
 ]
