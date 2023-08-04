@@ -24,6 +24,7 @@ const Navbar = () => {
 
     const handleNavigate = (path: string): void => {
         navigate(path);
+        setIsMenuOpen(false);
     }
 
     let linksToRender;
@@ -44,8 +45,8 @@ const Navbar = () => {
         <nav className="bg-white fixed w-full z-20 top-0 left-0 border-b border-gray-200 font-IBM">
             <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
                 <button onClick={() => handleNavigate('/')} className="flex items-center">
-                    <img src="/Logo.svg" className="h-16 w-16 items-center mr-3" alt="Logo" />
-                    <span className="self-center text-2xl font-semibold whitespace-nowrap text-primary-color">Green Block</span>
+                    <img src="/Logo.svg" className="h-16 w-16 items-center mr-1" alt="Logo" />
+                    <span className="self-center text-xl font-semibold whitespace-nowrap text-primary-color">Green Block</span>
                 </button>
                 <div className="flex md:order-2 items-center">
                     {user === null ? (
@@ -53,12 +54,20 @@ const Navbar = () => {
                             Login
                         </button>
                     ) : (
-                        <button type="button" className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700 dark:hover:text-white">
+                        <button onClick={() => handleNavigate('/profile')} className="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100">
                             <div className="relative">
                                 <img className="w-10 h-10 rounded-full mr-3" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxGE5UUKyMbl-0GfecpAM9EuwFxEKS-BkCHvDm1DHi4Q&s" alt="avatar-image" />
-                                <span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                                <span className="top-0 left-7 absolute  w-3.5 h-3.5 bg-green-400 border-2 border-white rounded-full"></span>
                             </div>
-                            {user?.firstName} {user?.lastName}
+                            {user.role !== 'provider' ? (
+                                <div className="sm:flex hidden">
+                                    {user?.firstName} {user?.lastName}
+                                </div>
+                            ) : (
+                                <div className="lg:flex hidden">
+                                    {user?.firstName} {user?.lastName}
+                                </div>
+                            )}
                         </button>
                     )}
                     <button type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" onClick={() => toggleMenu()}>
@@ -72,7 +81,7 @@ const Navbar = () => {
                         {
                             linksToRender.map((link, index) => (
                                 <li key={index}>
-                                    <button onClick={() => handleNavigate(link.pathName)} className={`block py-2 pl-3 pr-4 ${location.pathname === link.pathName ? "text-white bg-primary-color md:text-primary-color md:underline underline-offset-8 decoration-primary-color" : "text-gray-900"} rounded md:bg-transparent md:p-0`}>
+                                    <button onClick={() => handleNavigate(link.pathName)} className={`block py-2 pl-3 pr-4 ${location.pathname === link.pathName ? "text-white bg-primary-color w-full md:text-primary-color md:underline underline-offset-8 decoration-primary-color" : "text-gray-900"} rounded md:bg-transparent md:p-0`}>
                                         {link.title}
                                     </button>
                                 </li>

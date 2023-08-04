@@ -2,8 +2,8 @@ const HistoryTable = () => {
     return (
         <div>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg container mx-auto">
-                <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                <table className="w-full text-sm text-left text-gray-500">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" className="px-6 py-3">
                                 Product name
@@ -23,8 +23,8 @@ const HistoryTable = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr className="bg-white border-b">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 Apple MacBook Pro 17"
                             </th>
                             <td className="px-6 py-4">
@@ -37,11 +37,11 @@ const HistoryTable = () => {
                                 $2999
                             </td>
                             <td className="px-6 py-4">
-                                <a href="/history-detail" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                                <a href="/history-detail" className="font-medium text-blue-600 hover:underline">View</a>
                             </td>
                         </tr>
-                        <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr className="bg-white border-b">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 Microsoft Surface Pro
                             </th>
                             <td className="px-6 py-4">
@@ -54,11 +54,11 @@ const HistoryTable = () => {
                                 $1999
                             </td>
                             <td className="px-6 py-4">
-                                <a href="/history-detail" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                                <a href="/history-detail" className="font-medium text-blue-600 hover:underline">View</a>
                             </td>
                         </tr>
-                        <tr className="bg-white dark:bg-gray-800">
-                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <tr className="bg-white">
+                            <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                                 Magic Mouse 2
                             </th>
                             <td className="px-6 py-4">
@@ -71,7 +71,7 @@ const HistoryTable = () => {
                                 $99
                             </td>
                             <td className="px-6 py-4">
-                                <a href="/history-detail" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">View</a>
+                                <a href="/history-detail" className="font-medium text-blue-600 hover:underline">View</a>
                             </td>
                         </tr>
                     </tbody>

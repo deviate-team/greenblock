@@ -1,4 +1,4 @@
-export interface ITicket {
+export interface ITicketData {
     _id: string;
     title: string;
     description: string;
@@ -10,8 +10,22 @@ export interface ITicket {
     standard_price: number;
     business_price: number;
     provider: IProvider;
+    seat_limit: number;
     createdAt: string;
     updatedAt: string;
+}
+
+export interface ITicketListData {
+    totalTickets: number;
+    currentPage: number;
+    totalPages: number;
+    tickets: ITicketData[];
+}
+
+export interface ITicket {
+    success: boolean;
+    message: string;
+    data: ITicket[];
 }
 
 export interface ILocation {
@@ -20,6 +34,9 @@ export interface ILocation {
 }
 
 export interface IProvider {
-    name: string;
-    logo: string;
+    _id: string;
+    email: string;
+    username: string;
+    phoneNumber: string;
+    imageProfile: string;
 }
