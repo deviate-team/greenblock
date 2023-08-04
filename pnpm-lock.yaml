@@ -43,6 +43,9 @@ devDependencies:
   '@types/react-dom':
     specifier: ^18.0.11
     version: 18.0.11
+  '@types/react-geocode':
+    specifier: ^0.2.1
+    version: 0.2.1
   '@typescript-eslint/eslint-plugin':
     specifier: ^5.59.0
     version: 5.59.0(@typescript-eslint/parser@5.59.0)(eslint@8.38.0)(typescript@5.0.2)
@@ -665,6 +668,10 @@ packages:
     resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
     dependencies:
       '@types/react': 18.0.37
+    dev: true
+
+  /@types/react-geocode@0.2.1:
+    resolution: {integrity: sha512-iZAvDCFNYc3jZqB/MoPkOE/Gc0AzrBkCjpQnVpRKrDB6v8k6i4Cp+fpV7y3MLg13zasovTpuguo25nkVc31fcA==}
     dev: true
 
   /@types/react@18.0.37:

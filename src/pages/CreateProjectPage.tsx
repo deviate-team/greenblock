@@ -1,26 +1,27 @@
-import { IOfferForm } from "@/interfaces/offer";
+import { IProjectForm } from "@/interfaces/project";
+import { projectService } from "@/services/projects.services";
 import React, { useState } from "react";
 import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 
-const CreateOfferPage = () => {
+const CreateProjectPage = () => {
   const [dateValue, setDateValue] = useState<DateValueType>({
     startDate: null,
     endDate: null,
   });
-  const [offer, setOffer] = useState<IOfferForm>({
+  const [project, setProject] = useState<IProjectForm>({
     name: "",
     description: "",
     image: "",
-    date: {
-      startDate: "",
-      endDate: "",
+    time_period: {
+      start: "",
+      end: "",
     },
-    price_per_unit: 0,
+    price_by_unit: 0,
     maximum: 0,
-    contact: {
-      email: "",
-      phone: "",
+    contract: {
       name: "",
+      email: "",
+      tel: "",
     },
   });
 
@@ -32,24 +33,52 @@ const CreateOfferPage = () => {
     const endDateValue = newDateValue?.endDate
       ? newDateValue.endDate.toString()
       : "";
-    setOffer({
-      ...offer,
-      date: {
-        startDate: startDateValue,
-        endDate: endDateValue,
+    setProject({
+      ...project,
+      time_period: {
+        start: startDateValue,
+        end: endDateValue,
       },
     });
   };
 
-  const handleCreateOffer = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log(offer);
+  const handleCreateOffer = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+      await projectService.createProject(project);
+      setProject({
+        name: "",
+        description: "",
+        image: "",
+        time_period: {
+          start: "",
+          end: "",
+        },
+        price_by_unit: 0,
+        maximum: 0,
+        contract: {
+          name: "",
+          email: "",
+          tel: "",
+        },
+      });
+
+      setDateValue({
+        startDate: null,
+        endDate: null,
+      })
+    } catch (error) {
+      const message = (error as Error).message;
+      throw new Error(message);
+    }
   };
 
   return (
     <div className="container mx-auto lg:max-w-screen-xl p-4 font-BAI">
       <div className="max-w-xl bg-white mx-auto p-6 rounded-lg shadow-md">
-        <h1 className="text-center text-3xl font-medium mb-6">Create Offer</h1>
+        <h1 className="text-center text-3xl font-medium mb-6">
+          Create Project
+        </h1>
         <form onSubmit={handleCreateOffer}>
           <div className="mb-4">
             <label className="block font-medium text-gray-700">
@@ -60,8 +89,8 @@ const CreateOfferPage = () => {
               id="projectName"
               placeholder="Project name"
               className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-              value={offer.name}
-              onChange={(e) => setOffer({ ...offer, name: e.target.value })}
+              value={project.name}
+              onChange={(e) => setProject({ ...project, name: e.target.value })}
               required
             />
           </div>
@@ -74,9 +103,9 @@ const CreateOfferPage = () => {
               cols={30}
               rows={7}
               className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-              value={offer.description}
+              value={project.description}
               onChange={(e) =>
-                setOffer({ ...offer, description: e.target.value })
+                setProject({ ...project, description: e.target.value })
               }
               required
             ></textarea>
@@ -90,8 +119,10 @@ const CreateOfferPage = () => {
               id="projectImage"
               placeholder="Project image"
               className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-              value={offer.image}
-              onChange={(e) => setOffer({ ...offer, image: e.target.value })}
+              value={project.image}
+              onChange={(e) =>
+                setProject({ ...project, image: e.target.value })
+              }
               required
             />
           </div>
@@ -115,9 +146,12 @@ const CreateOfferPage = () => {
                 id="pricePerUnit"
                 placeholder="Price Per Unit"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={offer.price_per_unit}
+                value={project.price_by_unit}
                 onChange={(e) =>
-                  setOffer({ ...offer, price_per_unit: e.target.valueAsNumber })
+                  setProject({
+                    ...project,
+                    price_by_unit: e.target.valueAsNumber,
+                  })
                 }
                 required
               />
@@ -131,9 +165,9 @@ const CreateOfferPage = () => {
                 id="maximumOffer"
                 placeholder="Maximum Offer"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={offer.maximum}
+                value={project.maximum}
                 onChange={(e) =>
-                  setOffer({ ...offer, maximum: e.target.valueAsNumber })
+                  setProject({ ...project, maximum: e.target.valueAsNumber })
                 }
                 required
               />
@@ -142,18 +176,18 @@ const CreateOfferPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <div className="">
               <label className="block font-medium text-gray-700">
-                Contact Name
+                Contract Name
               </label>
               <input
                 type="text"
                 id="contactName"
-                placeholder="Contact Name"
+                placeholder="Contract Name"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={offer.contact.name}
+                value={project.contract.name}
                 onChange={(e) =>
-                  setOffer({
-                    ...offer,
-                    contact: { ...offer.contact, name: e.target.value },
+                  setProject({
+                    ...project,
+                    contract: { ...project.contract, name: e.target.value },
                   })
                 }
                 required
@@ -161,18 +195,18 @@ const CreateOfferPage = () => {
             </div>
             <div className="">
               <label className="block font-medium text-gray-700">
-                Contact Email
+                Contract Email
               </label>
               <input
                 type="text"
                 id="contactEmail"
-                placeholder="Contact Email"
+                placeholder="Contract Email"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={offer.contact.email}
+                value={project.contract.email}
                 onChange={(e) =>
-                  setOffer({
-                    ...offer,
-                    contact: { ...offer.contact, email: e.target.value },
+                  setProject({
+                    ...project,
+                    contract: { ...project.contract, email: e.target.value },
                   })
                 }
                 required
@@ -180,18 +214,18 @@ const CreateOfferPage = () => {
             </div>
             <div className="mb-4">
               <label className="block font-medium text-gray-700">
-                Contact Phone
+                Contract Phone
               </label>
               <input
                 type="text"
                 id="contactPhone"
-                placeholder="Contact Phone"
+                placeholder="Contract Phone"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={offer.contact.phone}
+                value={project.contract.tel}
                 onChange={(e) =>
-                  setOffer({
-                    ...offer,
-                    contact: { ...offer.contact, phone: e.target.value },
+                  setProject({
+                    ...project,
+                    contract: { ...project.contract, tel: e.target.value },
                   })
                 }
                 required
@@ -203,7 +237,7 @@ const CreateOfferPage = () => {
               type="submit"
               className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
             >
-              Create Offer
+              Create Project
             </button>
           </div>
         </form>
@@ -212,4 +246,4 @@ const CreateOfferPage = () => {
   );
 };
 
-export default CreateOfferPage;
+export default CreateProjectPage;

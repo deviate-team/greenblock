@@ -24,3 +24,15 @@ export const formatTimestamp = (timestamp: string): string => {
 
     return new Intl.DateTimeFormat('en-US', options).format(date);
 };
+
+export function formatTimeToISOString(dateString: string): string {
+    const now = new Date();
+    const [hours, minutes] = dateString.split(':').map(Number);
+
+    now.setUTCHours(hours);
+    now.setUTCMinutes(minutes);
+    now.setUTCSeconds(0);
+    now.setUTCMilliseconds(0);
+
+    return now.toISOString();
+}
