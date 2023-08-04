@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 const TicketPage = () => {
     const [Ticket, setTicket] = useState<ITicketData[]>([]);
-    const [currentPage, setCurrentPage] = useState<number>(2);
+    const [currentPage, setCurrentPage] = useState<number>(1);
     const [limitPage, setLimitPage] = useState<number>(1);
 
     const fetchTicketList = async (page: number): Promise<void> => {

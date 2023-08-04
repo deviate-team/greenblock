@@ -11,6 +11,8 @@ export interface ITicketData {
     business_price: number;
     provider: IProvider;
     seat_limit: number;
+    seat_booked: number;
+    availableTickets: number;
     createdAt: string;
     updatedAt: string;
 }
