@@ -69,7 +69,7 @@ const CreateProjectPage = () => {
       })
     } catch (error) {
       const message = (error as Error).message;
-      console.log(message);
+      throw new Error(message);
     }
   };
 
