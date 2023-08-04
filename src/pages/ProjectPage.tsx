@@ -6,20 +6,30 @@ import { Link } from "react-router-dom";
 
 const ProjectPage = () => {
   const [projects, setProjects] = useState<IProject[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const fetchProjects = async () => {
     try {
       const { data } = await projectService.getProjects();
       setProjects(data);
+      setLoading(false);
     } catch (error) {
-      const message = (error as Error).message
-      throw new Error(message)
+      const message = (error as Error).message;
+      setLoading(false);
+      throw new Error(message);
     }
-  }
+  };
 
   useEffect(() => {
     fetchProjects();
   }, []);
+
+  if (loading)
+    return (
+      <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
+        <p className="text-center">Loading..</p>
+      </div>
+    );
 
   return (
     <div className="container lg:max-w-screen-xl mx-auto p-4 space-y-6 font-BAI">
