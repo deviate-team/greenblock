@@ -3,7 +3,7 @@ const Feature = () => {
         <section className=" bg-white text-primary-color mt-0 py-0 item-center mb-28">
             <div className="relative overflow-auto w-screen max-h-96 bg-fixed bg-contain " >
                 <img
-                    src="../public/chiangmaiblue.jpg"
+                    src="/chiangmaiblue.jpg"
                     alt="Hero Image"
                     className="w-full h-auto bg-opacity-5"
                 />
@@ -23,7 +23,7 @@ const Feature = () => {
                         <div
                         className="block w-full shrink-0 grow-0 basis-auto md:w-2/5 lg:flex">
                         <img
-                            src="../public/plant.jpg"
+                            src="/plant.jpg"
                             alt="Logo"
                             className="w-full rounded-t-lg md:rounded-tr-none md:rounded-bl-lg" />
                         </div>
@@ -52,7 +52,7 @@ const Feature = () => {
                 <h2 className="my-3 text-4xl font-semibold text-center">What can we help you ?</h2>
                 <div className="container mx-auto my-10 grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-2 font-BAI">
                     <div className="flex flex-col items-center p-4 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                        <img src="../public/person.svg" className="h-16 w-16 items-center mr-1" alt="Logo" />
+                        <img src="/person.svg" className="h-16 w-16 items-center mr-1" alt="Logo" />
                         <h3 className="my-3 text-3xl font-semibold">For Individual</h3>
                         <div className="space-y-1">
                             <li className="mb-0 flex">
@@ -82,7 +82,7 @@ const Feature = () => {
                         </div>
                     </div>
                     <div className="flex flex-col items-center p-4 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                        <img src="../public/business.svg" className="h-16 w-16 items-center mr-1" alt="Logo" />
+                        <img src="/business.svg" className="h-16 w-16 items-center mr-1" alt="Logo" />
                         <h3 className="my-3 text-3xl font-semibold">For Business</h3>
                         <div className="space-y-1 leadi">
                         <li className="mb-0 flex">
