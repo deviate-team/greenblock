@@ -14,8 +14,9 @@ import MarketplacePage from "@/pages/MarketplacePage";
 import TicketPage from "@/pages/TicketPage";
 import SwapPage from "@/pages/SwapPage";
 import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
-import BuyOffSetPage from "./pages/BuyOffsetPage";
-import CreateOfferPage from "./pages/CreateOfferPage";
+import BuyOffSetPage from "@/pages/BuyOffsetPage";
+import CreateOfferPage from "@/pages/CreateOfferPage";
+import TestMapPage from "@/pages/TestMapPage";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history-detail" element={<HistoryDetailPage />} />
           <Route path="/create-offer" element={<CreateOfferPage />} />
+          <Route path="/test-map" element={<TestMapPage />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
