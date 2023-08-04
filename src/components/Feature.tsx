@@ -50,37 +50,37 @@ const Feature = () => {
                 <h2 className="my-3 text-4xl font-semibold text-center">What can we help you ?</h2>
                 <div className="container mx-auto my-10 grid justify-center gap-4 sm:grid-cols-2 lg:grid-cols-2 font-BAI">
                     <div className="flex flex-col items-center p-8 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                        <img src="/person.svg" className="h-16 w-16 items-center mr-1 bg-primary-color" alt="Logo" />
+                        <img src="/person.svg" className="h-16 w-16 items-center mr-1" alt="Logo" />
                         <h3 className="my-3 text-3xl font-semibold">For Individual</h3>
                         <div className="space-y-1">
                             <li className="mb-0 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
-                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color">
+                                    <path strokeLinecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Online transportation booking
                             </li>
                             <li className="mb-4 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" className="mr-3 h-5 w-5 text-primary dark:text-primary-400">
+                                stroke="currentColor" className="mr-3 h-5 w-5 text-primary">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Carbon footprint tracking
                             </li>
                             <li className="mb-4 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Green Tourist Certificate
                             </li>
                             <li className="mb-4 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Special discount & more
                             </li>
                         </div>
                     </div>
                     <div className="flex flex-col items-center p-4 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                        <img src="/business.svg" className="h-16 w-16 items-center mr-1 bg-primary-color p-1" alt="Logo" />
+                        <img src="/business.svg" className="h-16 w-16 items-center mr-1 p-1" alt="Logo" />
                         <h3 className="my-3 text-3xl font-semibold">For Business</h3>
                         <div className="space-y-1 leadi">
                             <li className="mb-0 flex">
