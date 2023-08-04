@@ -1,13 +1,13 @@
 import { formatDate } from "@/hooks/format";
-import { buyOffsetsMockup } from "@/mocks/buy-offsets.test";
+import { projects } from "@/mocks/project.test";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
-const BuyOffSetPage = () => {
+const ProjectDetailPage = () => {
   const [offerValue, setOfferValue] = useState<number>(10);
   const { id } = useParams<{ id: string }>();
 
-  const buyOffset = buyOffsetsMockup.find((data) => data._id === id);
+  const buyOffset = projects.find((data) => data._id === id);
 
   const handleIncrease = () => {
     setOfferValue(offerValue + 1);
@@ -203,4 +203,4 @@ const BuyOffSetPage = () => {
   );
 };
 
-export default BuyOffSetPage;
+export default ProjectDetailPage;

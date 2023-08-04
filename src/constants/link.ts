@@ -51,8 +51,8 @@ export const ProviderLink: ILink[] = [
         "title": 'Tickets',
     },
     {
-        "pathName": '/buy-offsets',
-        "title": 'Buy Offsets',
+        "pathName": '/projects',
+        "title": 'Projects',
     },
     {
         "pathName": '/marketplace',

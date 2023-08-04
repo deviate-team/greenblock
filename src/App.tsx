@@ -13,8 +13,8 @@ import RegisterPage from "@/pages/RegisterPage";
 import MarketplacePage from "@/pages/MarketplacePage";
 import TicketPage from "@/pages/TicketPage";
 import SwapPage from "@/pages/SwapPage";
-import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
-import BuyOffSetPage from "@/pages/BuyOffsetPage";
+import ProjectPage from "@/pages/ProjectPage";
+import ProjectDetailPage from "@/pages/ProjectDetailPage";
 import CreateOfferPage from "@/pages/CreateOfferPage";
 import TestMapPage from "@/pages/TestMapPage";
 
@@ -29,8 +29,8 @@ const App = () => {
           <Route path="/marketplace/:id" element={<MarketplacePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/swap" element={<SwapPage />} />
-          <Route path="/buy-offsets" element={<BuyOffSetsPage />} />
-          <Route path="/buy-offsets/:id" element={<BuyOffSetPage />} />
+          <Route path="/projects" element={<ProjectPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history-detail" element={<HistoryDetailPage />} />
