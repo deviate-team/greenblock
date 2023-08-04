@@ -10,12 +10,11 @@ export interface IContract {
 } 
 
 export interface IProject {
-  project_name: string;
+  name: string;
   description: string;
   owner: string;
   time_period: ITimePeriod;
-  contract: string;
-  contact: IContact
+  contract: IContract
   price_by_unit: number;
   _id: string;
   image: string;
