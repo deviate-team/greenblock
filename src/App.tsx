@@ -14,7 +14,7 @@ import MarketplacesPage from "@/pages/MarketplacesPage";
 import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
-import CrowdFundingDetailPage from "@/pages/CrowdfundingDetailPage";
+import CrowdFundingDetailPage from "@/pages/CrowdFundingDetailPage";
 import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import TicketPage from "@/pages/TicketPage";
 import CrowdFundingPage from "@/pages/CrowdFundingPage";
