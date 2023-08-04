@@ -6,6 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      - VITE_API_PATH=http://gb-api:5000
+      - VITE_API_PATH=https://api.1tpp.dev
     ports:
       - "3000:3000"
