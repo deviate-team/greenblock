@@ -10,7 +10,7 @@ export const NonAuthUserLink: ILink[] = [
     },
     {
         "pathName": '/ticket',
-        "title": 'Ticket',
+        "title": 'Tickets',
     },
     {
         "pathName": '/contact',
@@ -25,7 +25,7 @@ export const UserLink: ILink[] = [
     },
     {
         "pathName": '/ticket',
-        "title": 'Ticket',
+        "title": 'Tickets',
     },
     {
         "pathName": '/history',
@@ -48,7 +48,7 @@ export const ProviderLink: ILink[] = [
     },
     {
         "pathName": '/ticket',
-        "title": 'Ticket',
+        "title": 'Tickets',
     },
     {
         "pathName": '/buy-offsets',
