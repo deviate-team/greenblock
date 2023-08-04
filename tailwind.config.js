@@ -3,9 +3,21 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/react-tailwindcss-datepicker/dist/index.esm.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'primary-color': '#064420',
+        'secondary-color': '#E4EFE7',
+        'primary-hover-color': '#FAF1E6',
+        'secondary-hover-color': '#FDFAF6',
+    },
+    fontFamily: {
+      'IBM' : ['IBM Plex Sans', 'sans-serif'],
+      'BAI' : ['Bai Jamjuree', 'sans-serif']
+    }
+    },
   },
   plugins: [],
 }
