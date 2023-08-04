@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import ProgressBar from "@/components/ProgressBar";
 import { formatDate } from "@/hooks/format";
 import { IProject } from "@/interfaces/project";
@@ -30,12 +31,7 @@ const CrowdFundingPage = () => {
     fetchProjects();
   }, []);
 
-  if (loading)
-    return (
-      <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
-        <p className="text-center">Loading..</p>
-      </div>
-    );
+  if (loading) return <Loading />;
 
   return (
     <div className="container lg:max-w-screen-xl mx-auto p-4 space-y-6 font-BAI">
@@ -180,7 +176,10 @@ Drive sustainability and profitability for your small business through our Crowd
                 </svg>
                 <p>${data.price_by_unit}</p>
               </div>
-              <ProgressBar maximumValue={data.maximum} currentAmount={data.amount} />
+              <ProgressBar
+                maximumValue={data.maximum}
+                currentAmount={data.amount}
+              />
             </div>
           </Link>
         ))}
