@@ -1,4 +1,4 @@
-export interface IContact {
+export interface Icontract {
   name: string;
   email: string;
   phoneNumber: string;
@@ -9,7 +9,7 @@ export interface IProject {
   name: string;
   description: string;
   owner: string;
-  contact: Contact;
+  contract: contract;
   start_date: string;
   end_date: string;
   image: string;
@@ -24,7 +24,7 @@ export interface IProject {
 export interface ICreateProject {
   name: string;
   description: string;
-  contact: {
+  contract: {
     name: string;
     email: string;
     phoneNumber: string;

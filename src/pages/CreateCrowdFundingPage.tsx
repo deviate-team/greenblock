@@ -180,7 +180,7 @@ const CreateCrowdFundingPage = () => {
               </label>
               <input
                 type="text"
-                id="contactName"
+                id="contractName"
                 placeholder="Contract Name"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
                 value={project.contract.name}
@@ -199,7 +199,7 @@ const CreateCrowdFundingPage = () => {
               </label>
               <input
                 type="text"
-                id="contactEmail"
+                id="contractEmail"
                 placeholder="Contract Email"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
                 value={project.contract.email}
@@ -218,7 +218,7 @@ const CreateCrowdFundingPage = () => {
               </label>
               <input
                 type="text"
-                id="contactPhone"
+                id="contractPhone"
                 placeholder="Contract Phone"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
                 value={project.contract.tel}

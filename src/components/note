@@ -213,16 +213,16 @@ className="flex flex-col justify-center items-center space-y-8"
   </ol>
 </div>
 </section>
-<!-- contact -->
+<!-- contract -->
 <section
-id="contact"
+id="contract"
 className="flex flex-col justify-center items-center space-y-8"
 >
 <div className="flex flex-col justify-center">
   <h3
     className="text-2xl text-gray-700 font-bold mb-6 ml-3 items-center text-center"
   >
-    Contact Me
+    contract Me
   </h3>
   <div className="space-x-2">
     <a
