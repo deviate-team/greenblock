@@ -17,7 +17,6 @@ import SwapPage from "@/pages/SwapPage";
 import ProjectPage from "@/pages/ProjectPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
 import CreateProjectPage from "@/pages/CreateProjectPage";
-import TestMapPage from "@/pages/TestMapPage";
 import TicketPage from "@/pages/TicketPage";
 
 const App = () => {
@@ -38,7 +37,6 @@ const App = () => {
           <Route path="/history-detail" element={<HistoryDetailPage />} />
           <Route path="/create-project" element={<CreateProjectPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
-          <Route path="/test-map" element={<TestMapPage />} />
           <Route path="/confirm" element={<ConfirmPage />} />
         </Route >
         <Route element={<AuthLayout />}>

@@ -69,7 +69,7 @@ const CreateProjectPage = () => {
       })
     } catch (error) {
       const message = (error as Error).message;
-      console.log(message);
+      throw new Error(message);
     }
   };
 
@@ -237,7 +237,7 @@ const CreateProjectPage = () => {
               type="submit"
               className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
             >
-              Create Offer
+              Create Project
             </button>
           </div>
         </form>

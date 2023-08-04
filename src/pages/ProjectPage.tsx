@@ -1,8 +1,36 @@
 import { formatDate } from "@/hooks/format";
-import { projects } from "@/mocks/project.test";
+import { IProject } from "@/interfaces/project";
+import { projectService } from "@/services/projects.services";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const ProjectPage = () => {
+  const [projects, setProjects] = useState<IProject[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+
+  const fetchProjects = async () => {
+    try {
+      const { data } = await projectService.getProjects();
+      setProjects(data);
+      setLoading(false);
+    } catch (error) {
+      const message = (error as Error).message;
+      setLoading(false);
+      throw new Error(message);
+    }
+  };
+
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+
+  if (loading)
+    return (
+      <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
+        <p className="text-center">Loading..</p>
+      </div>
+    );
+
   return (
     <div className="container lg:max-w-screen-xl mx-auto p-4 space-y-6 font-BAI">
       <h1 className="text-2xl font-BAI font-medium text-center">Projects</h1>
@@ -19,10 +47,20 @@ const ProjectPage = () => {
               className="w-1/2 rounded-l-xl object-cover"
             />
             <div className="p-4 w-full space-y-3">
-              <h1 className="text-xl font-bold">{data.project_name}</h1>
+              <h1 className="text-xl font-bold">{data.name}</h1>
               <div className="flex items-center space-x-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path fill="#064420" d="M10.5 16a5.5 5.5 0 1 0 0-11a5.5 5.5 0 0 0 0 11ZM23 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8ZM5 18a3 3 0 0 0-3 3v.15S2 27 10.5 27s8.5-5.85 8.5-5.85V21a3 3 0 0 0-3-3H5Zm18 7c-1.456 0-2.608-.198-3.521-.513c.432-.7.68-1.375.82-1.92a6.391 6.391 0 0 0 .193-1.196c.002-.04.004-.076.004-.107l.001-.042V21a4.484 4.484 0 0 0-1.145-3h8.241A2.406 2.406 0 0 1 30 20.406S30 25 23 25Z"/></svg>
-              <p>{data.owner}</p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 32 32"
+                >
+                  <path
+                    fill="#064420"
+                    d="M10.5 16a5.5 5.5 0 1 0 0-11a5.5 5.5 0 0 0 0 11ZM23 16a4 4 0 1 0 0-8a4 4 0 0 0 0 8ZM5 18a3 3 0 0 0-3 3v.15S2 27 10.5 27s8.5-5.85 8.5-5.85V21a3 3 0 0 0-3-3H5Zm18 7c-1.456 0-2.608-.198-3.521-.513c.432-.7.68-1.375.82-1.92a6.391 6.391 0 0 0 .193-1.196c.002-.04.004-.076.004-.107l.001-.042V21a4.484 4.484 0 0 0-1.145-3h8.241A2.406 2.406 0 0 1 30 20.406S30 25 23 25Z"
+                  />
+                </svg>
+                <p>{data.contract.name}</p>
               </div>
               <div className="flex space-x-2 items-center">
                 <svg
@@ -42,7 +80,7 @@ const ProjectPage = () => {
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-              <svg
+                <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
                   height="24"
