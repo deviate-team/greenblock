@@ -4,7 +4,7 @@ import { projectService } from "@/services/projects.services";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const ProjectDetailPage = () => {
+const CrowdFundingDetailPage = () => {
   const [offerValue, setOfferValue] = useState<number>(10);
   const [project, setproject] = useState<IProject>();
   const [loading, setLoading] = useState<boolean>(true);
@@ -198,4 +198,4 @@ const ProjectDetailPage = () => {
   );
 };
 
-export default ProjectDetailPage;
+export default CrowdFundingDetailPage;
