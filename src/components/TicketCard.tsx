@@ -1,7 +1,8 @@
-import { formatTime, formatTimestamp } from "@/hooks/format"
+import { extractDepartureAndArrival, formatTime, formatTimestamp } from "@/hooks/format"
 import { ITicketData } from "@/interfaces/ticket"
 
 const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
+    const { department, arrival } = extractDepartureAndArrival(ticket.title)
     return (
         <div className="mx-auto p-5 font-BAI">
             <div className="max-w-full bg-white flex flex-col rounded overflow-hidden shadow-lg">
@@ -29,11 +30,11 @@ const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
 
                     <div className="flex flex-col p-2">
                         <p className="font-bold">{formatTime(ticket.depart_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">Bangkok</span></p>
+                        <p className="text-gray-500"><span className="font-bold">{department}</span></p>
                     </div>
                     <div className="flex flex-col flex-wrap p-2">
                         <p className="font-bold">{formatTime(ticket.arrive_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">Chiangmai</span></p>
+                        <p className="text-gray-500"><span className="font-bold">{arrival}</span></p>
                     </div>
                 </div>
                 <div className="mt-4 bg-gray-100 flex flex-row flex-wrap md:flex-nowrap justify-between items-baseline">
