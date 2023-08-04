@@ -3,7 +3,7 @@ interface ILink {
     title: string;
 }
 
-export const Link: ILink[] = [
+export const NonAuthUserLink: ILink[] = [
     {
         "pathName": '/',
         "title": 'Home',
@@ -13,16 +13,50 @@ export const Link: ILink[] = [
         "title": 'Ticket',
     },
     {
-        pathName: '/buy-offsets',
-        title: 'Buy Offsets',
+        "pathName": '/contact',
+        "title": 'Contact',
+    },
+]
+
+export const UserLink: ILink[] = [
+    {
+        "pathName": '/',
+        "title": 'Home',
     },
     {
-        pathName: '/marketplace',
-        title: 'Marketplace',
+        "pathName": '/ticket',
+        "title": 'Ticket',
     },
     {
         "pathName": '/history',
         "title": 'History',
+    },
+    {
+        "pathName": '/profile',
+        "title": 'Profile',
+    },
+    {
+        "pathName": '/contact',
+        "title": 'Contact',
+    },
+]
+
+export const ProviderLink: ILink[] = [
+    {
+        "pathName": '/',
+        "title": 'Home',
+    },
+    {
+        "pathName": '/ticket',
+        "title": 'Ticket',
+    },
+    {
+        "pathName": '/buy-offsets',
+        "title": 'Buy Offsets',
+    },
+    {
+        "pathName": '/marketplace',
+        "title": 'Marketplace',
     },
     {
         "pathName": '/profile',
