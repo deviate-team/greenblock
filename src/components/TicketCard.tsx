@@ -1,4 +1,4 @@
-import { formatTime } from "@/hooks/format"
+import { formatTime, formatTimestamp } from "@/hooks/format"
 import { ITicket } from "@/interfaces/ticket"
 
 const TicketCard = ({ ticket }: { ticket: ITicket }) => {
@@ -8,7 +8,7 @@ const TicketCard = ({ ticket }: { ticket: ITicket }) => {
                 <div className="flex flex-row items-center flex-nowrap bg-gray-100 p-2">
                     <img width="24" height="24" src="https://img.icons8.com/material/24/000000/bus--v2.png" />
                     <h1 className="ml-2 uppercase font-bold text-gray-500">departure</h1>
-                    <p className="ml-2 font-normal text-gray-500">{ticket.date}</p>
+                    <p className="ml-2 font-normal text-gray-500">{formatTimestamp(ticket.date)}</p>
                 </div>
                 <div className="mt-2 flex justify-start bg-white p-2">
                     <div className="flex mx-2 ml-6 h8 px-2 flex-row items-baseline rounded-full bg-gray-100 p-1">
