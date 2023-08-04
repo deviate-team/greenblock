@@ -4,6 +4,7 @@ import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
 import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
 import BuyOffSetPage from "@/pages/BuyOffsetPage";
+import ConfirmPage from "@/pages/ConfirmPage";
 import ContactPage from "@/pages/ContactPage";
 import CreateOfferPage from "@/pages/CreateOfferPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/create-offer" element={<CreateOfferPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
           <Route path="/test-map" element={<TestMapPage />} />
+          <Route path="/confirm" element={<ConfirmPage />} />
         </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
