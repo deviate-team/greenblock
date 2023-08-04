@@ -8,10 +8,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary-color': '#064420',
-        'secondary-color': '#E4EFE7',
-        'primary-hover-color': '#FAF1E6',
-        'secondary-hover-color': '#FDFAF6',
+        'primary-color': '#059669',
+        'secondary-color': '#020617',
+        'primary-hover-color': '#0f766e',
+        'secondary-hover-color': '#7dd3fc',
     },
     fontFamily: {
       'IBM' : ['IBM Plex Sans', 'sans-serif'],
