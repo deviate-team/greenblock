@@ -1,52 +1,49 @@
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const MarketplacePage = () => {
-  // Mockup data
-  const mockupData = [];
-  for (let i = 1; i <= 100; i++) {
-    mockupData.push({
-      id: i,
-      token: `Token ${i}`,
-      price: `$${Math.floor(Math.random() * 100)}`,
-      volume: `${Math.floor(Math.random() * 1000)}`,
-      change: `${Math.floor(Math.random() * 20) - 10}%`,
-    });
-  }
+  const [active, setActive] = useState("trade");
 
-  const navigate = useNavigate();
-
-  const handleRowClick = (id: number) => {
-    navigate(`/marketplace/${id}`);
+  const handleActive = (type: string) => {
+    setActive(type);
   };
 
   return (
-    <div className="container lg:max-w-screen-xl p-4 mx-auto font-IBM">
-      <table className="w-full text-center border-collapse border-2 border-gray-300">
-        <thead className="">
-          <tr className="border-2 border-gray-300">
-            <th className="py-4 ">#</th>
-            <th className="py-4 ">Token</th>
-            <th className="py-4 ">Price</th>
-            <th className="py-4 ">Volume</th>
-            <th className="py-4 ">Change</th>
-          </tr>
-        </thead>
-        <tbody>
-          {mockupData.map((data) => (
-            <tr
-              key={data.id}
-              className="hover:bg-gray-200"
-              onClick={() => handleRowClick(data.id)}
-            >
-              <td className="py-4">{data.id}</td>
-              <td className="py-4">{data.token}</td>
-              <td className="py-4">{data.price}</td>
-              <td className="py-4">{data.volume}</td>
-              <td className="py-4">{data.change}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+    <div className="container lg:max-w-screen-xl p-4 mx-auto">
+      <div className="bg-white space-y-4 max-w-sm mx-auto p-8 rounded-2xl border-2 border-gray-200">
+        <div className="space-x-4">
+          <button
+            onClick={() => handleActive("trade")}
+            className={`${
+              active === "trade" ? "text-gray-900 font-medium" : "text-gray-500"
+            } text-lg font-BAI`}
+          >
+            Trade
+          </button>
+          <button
+            onClick={() => handleActive("buy")}
+            className={`${
+              active === "buy" ? "text-gray-900 font-medium" : "text-gray-500"
+            } text-lg font-BAI`}
+          >
+            Buy
+          </button>
+        </div>
+        <div className="flex flex-col space-y-4">
+          <input
+            type="number"
+            className="border-2 border-gray-200 p-2 text-3xl py-2 rounded-xl"
+          />
+          <input
+            type="number"
+            className="border-2 border-gray-200 p-2 text-3xl py-2 rounded-xl"
+          />
+        </div>
+        <div>
+          <button className="bg-primary-color text-white w-full text-lg p-3 rounded-xl font-BAI font-medium">
+            {active === "trade" ? "Trade" : "Buy"}
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

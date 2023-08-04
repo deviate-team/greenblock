@@ -3,25 +3,62 @@ interface ILink {
     title: string;
 }
 
-export const Link: ILink[] = [
+export const NonAuthUserLink: ILink[] = [
     {
         "pathName": '/',
         "title": 'Home',
     },
     {
         "pathName": '/ticket',
-        "title": 'Ticket',
+        "title": 'Tickets',
+    },
+    {
+        "pathName": '/contact',
+        "title": 'Contact',
+    },
+]
+
+export const UserLink: ILink[] = [
+    {
+        "pathName": '/',
+        "title": 'Home',
+    },
+    {
+        "pathName": '/ticket',
+        "title": 'Tickets',
     },
     {
         "pathName": '/history',
         "title": 'History',
     },
     {
-        "pathName": '/profile',
-        "title": 'Profile',
+        "pathName": '/contact',
+        "title": 'Contact',
+    },
+]
+
+export const ProviderLink: ILink[] = [
+    {
+        "pathName": '/',
+        "title": 'Home',
+    },
+    {
+        "pathName": '/ticket',
+        "title": 'Tickets',
+    },
+    {
+        "pathName": '/projects',
+        "title": 'Projects',
+    },{
+        "pathName": '/create-project',
+        "title": 'Create Project',
+    },
+    {
+        "pathName": '/marketplace',
+        "title": 'Marketplace',
     },
     {
         "pathName": '/contact',
         "title": 'Contact',
-    }
+    },
 ]

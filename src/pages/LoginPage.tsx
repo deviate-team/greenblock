@@ -1,15 +1,18 @@
+import { ILoginForm } from "@/interfaces/form";
 import { userService } from "@/services/user.services";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
-
-    const [user, setUser] = useState({
+    const [user, setUser] = useState<ILoginForm>({
         email: '', password: ''
     });
+    const navigate = useNavigate();
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
         await userService.login(user.email, user.password);
+        navigate('/');
     }
 
     return (

@@ -16,7 +16,7 @@ export const userService = {
             throw new Error(message);
         }
     },
-    async register(email: string, firstName: string, middleName: string, lastName: string, birthDate: string, username: string, password: string, confirmPassword: string) {
+    async register(email: string, firstName: string, middleName: string, lastName: string, birthDate: string, phoneNumber: string, username: string, password: string, confirmPassword: string) {
         try {
             const response = await axiosInstance.post('/auth/sign-up', {
                 email,
@@ -25,11 +25,29 @@ export const userService = {
                 lastName,
                 birthDate,
                 username,
+                phoneNumber,
                 password,
                 confirmPassword
             });
             const token = response.headers.authorization;
             Cookies.set('token', token);
+            return response.data;
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    },
+    async logout() {
+        try {
+            Cookies.remove('token');
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    },
+    async getUserProfile() {
+        try {
+            const response = await axiosInstance.get('/users/profile');
             return response.data;
         } catch (error) {
             const message = (error as Error).message;
