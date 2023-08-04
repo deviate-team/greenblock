@@ -32,10 +32,6 @@ export const UserLink: ILink[] = [
         "title": 'History',
     },
     {
-        "pathName": '/profile',
-        "title": 'Profile',
-    },
-    {
         "pathName": '/contact',
         "title": 'Contact',
     },
@@ -57,10 +53,6 @@ export const ProviderLink: ILink[] = [
     {
         "pathName": '/marketplace',
         "title": 'Marketplace',
-    },
-    {
-        "pathName": '/profile',
-        "title": 'Profile',
     },
     {
         "pathName": '/contact',

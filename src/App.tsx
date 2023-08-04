@@ -2,20 +2,21 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
+import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
+import BuyOffSetPage from "@/pages/BuyOffsetPage";
 import ContactPage from "@/pages/ContactPage";
+import CreateOfferPage from "@/pages/CreateOfferPage";
+import CreateTicketPage from "@/pages/CreateTicketPage";
 import HistoryDetailPage from "@/pages/HistoryDetailPage";
 import HistoryPage from "@/pages/HistoryPage";
 import HomePage from "@/pages/HomePage";
 import LoginPage from "@/pages/LoginPage";
+import MarketplacePage from "@/pages/MarketplacePage";
 import MarketplacesPage from "@/pages/MarketplacesPage";
 import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
-import MarketplacePage from "@/pages/MarketplacePage";
-import TicketPage from "@/pages/TicketPage";
 import SwapPage from "@/pages/SwapPage";
-import BuyOffSetsPage from "@/pages/BuyOffSetsPage";
-import BuyOffSetPage from "./pages/BuyOffsetPage";
-import CreateOfferPage from "./pages/CreateOfferPage";
+import TicketPage from "@/pages/TicketPage";
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history-detail" element={<HistoryDetailPage />} />
           <Route path="/create-offer" element={<CreateOfferPage />} />
+          <Route path="/create-ticket" element={<CreateTicketPage />} />
         </Route>
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
