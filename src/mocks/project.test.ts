@@ -1,6 +1,6 @@
-import { IBuyOffset } from "@/interfaces/buy-offset";
+import { IProject } from "@/interfaces/project";
 
-export const buyOffsetsMockup: IBuyOffset[] = [
+export const projects: IProject[] = [
   {
     project_name: "Project A",
     image:
@@ -18,7 +18,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 150,
     _id: "987654321",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project B",
@@ -37,7 +42,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 200,
     _id: "456789123",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project C",
@@ -56,7 +66,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 80,
     _id: "246813579",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project D",
@@ -75,7 +90,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 120,
     _id: "135792468",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project E",
@@ -94,7 +114,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 180,
     _id: "579246813",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project F",
@@ -113,7 +138,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 90,
     _id: "753159852",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project G",
@@ -132,7 +162,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 210,
     _id: "951753852",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project H",
@@ -151,7 +186,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 160,
     _id: "369852147",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project I",
@@ -170,7 +210,12 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 190,
     _id: "852963741",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
   {
     project_name: "Project J",
@@ -189,6 +234,11 @@ export const buyOffsetsMockup: IBuyOffset[] = [
     },
     price_by_unit: 175,
     _id: "456123789",
-    maximum: 25
+    maximum: 25,
+    amount: 0,
+    member:[],
+    contract: "2023-08-15T00:00:00Z",
+    updatedAt:"2023-08-15T00:00:00Z",
+    createdAt: "2023-08-15T00:00:00Z"
   },
 ];
