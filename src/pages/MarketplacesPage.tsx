@@ -1,3 +1,4 @@
+import Loading from "@/components/Loading";
 import { IOffer } from "@/interfaces/offer";
 import { offerService } from "@/services/offer.services";
 import { useEffect, useState } from "react";
@@ -25,9 +26,7 @@ const MarketplacePage = () => {
 
   if (loading)
     return (
-      <div className="container lg:max-w-screen-lg mx-auto p-4 font-BAI">
-        <p className="text-center">Loading..</p>
-      </div>
+      <Loading />
     );
 
   return (
