@@ -19,6 +19,16 @@ const ProfilePage = () => {
     fetchUser();
   }, [])
 
+  const handleSignOut = async () => {
+    try {
+      await userService.logout();
+      window.location.href = '/';
+    } catch (error) {
+      const message = (error as Error).message;
+      throw new Error(message);
+    }
+  }
+
   return (
     <div
       className="max-w-2xl mx-4 sm:max-w-sm md:max-w-sm lg:max-w-sm xl:max-w-sm sm:mx-auto md:mx-auto lg:mx-auto xl:mx-auto mt-16 bg-white shadow-xl rounded-lg text-gray-900 font-BAI">
@@ -56,7 +66,7 @@ const ProfilePage = () => {
         </li>
       </ul>
       <div className="p-4 border-t mx-8 mt-2">
-        <button className="w-1/2 block mx-auto rounded-full bg-primary-color hover:shadow-lg font-semibold text-secondary-color px-6 py-2">Follow</button>
+        <button onClick={() => handleSignOut()} className="w-1/2 block mx-auto rounded-full bg-primary-color hover:shadow-lg font-semibold text-secondary-color px-6 py-2">Signout</button>
       </div>
     </div>
   )
