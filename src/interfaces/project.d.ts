@@ -3,7 +3,7 @@ export interface ITimePeriod  {
   end: string;
 }
 
-export interface IContact {
+export interface IContract {
   name: string;
   email: string;
   tel: string;
@@ -29,11 +29,11 @@ export interface IProject {
 export interface ICreateProject {
   name: string
   description: string
-  contract: string
   price_by_unit: number
   maximum: number
   image:string
   time_period: ITimePeriod
+  contract: IContract
 }
 
 export type IProjectForm = ICreateProject
