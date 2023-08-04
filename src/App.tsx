@@ -16,7 +16,6 @@ import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
 import CrowdFundingDetailPage from "@/pages/CrowdfundingDetailPage";
 import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
-import TestMapPage from "@/pages/TestMapPage";
 import TicketPage from "@/pages/TicketPage";
 import CrowdFundingPage from "@/pages/CrowdFundingPage";
 
@@ -38,7 +37,6 @@ const App = () => {
           <Route path="/history-detail" element={<HistoryDetailPage />} />
           <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
-          <Route path="/test-map" element={<TestMapPage />} />
           <Route path="/confirm" element={<ConfirmPage />} />
         </Route >
         <Route element={<AuthLayout />}>
