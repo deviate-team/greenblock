@@ -35,10 +35,28 @@ export interface ILocation {
     longitude: number;
 }
 
+export interface ILocationData {
+    lagitude: number;
+    longitude: number;
+}
+
 export interface IProvider {
     _id: string;
     email: string;
     username: string;
     phoneNumber: string;
     imageProfile: string;
+}
+
+export interface ICreateTicket {
+    title: string;
+    description: string;
+    depart_location: ILocationData;
+    arrive_location: ILocationData;
+    date: string;
+    depart_time: string;
+    arrive_time: string;
+    standard_price: number;
+    business_price: number;
+    seat_limit: number;
 }

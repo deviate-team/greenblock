@@ -25,15 +25,14 @@ export const formatTimestamp = (timestamp: string): string => {
     return new Intl.DateTimeFormat('en-US', options).format(date);
 };
 
-export function extractDepartureAndArrival(input: string): { department: string, arrival: string } {
-    const regex = /Flight Ticket - (.+) to (.+)/;
-    const match = input.match(regex);
+export function formatTimeToISOString(dateString: string): string {
+    const now = new Date();
+    const [hours, minutes] = dateString.split(':').map(Number);
 
-    if (match && match.length === 3) {
-        const department = match[1].trim();
-        const arrival = match[2].trim();
-        return { department, arrival };
-    } else {
-        throw new Error('Invalid input format. Expected "Flight Ticket - [Departure] to [Arrival]"');
-    }
+    now.setUTCHours(hours);
+    now.setUTCMinutes(minutes);
+    now.setUTCSeconds(0);
+    now.setUTCMilliseconds(0);
+
+    return now.toISOString();
 }

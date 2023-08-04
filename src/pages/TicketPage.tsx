@@ -40,7 +40,7 @@ const TicketPage = () => {
             links.push(
                 <button className="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700" onClick={prevPage}>
                     <svg className="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1 1 5l4 4" />
                     </svg>
                 </button>
             );
@@ -61,11 +61,12 @@ const TicketPage = () => {
         if (currentPage < limitPage) {
             links.push(
                 <button
+                    key="next"
                     className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700"
                     onClick={nextPage}
                 >
                     <svg className="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
                     </svg>
                 </button>
             );
@@ -76,10 +77,15 @@ const TicketPage = () => {
 
     return (
         <div>
+            <div className="flex justify-end mx-auto container">
+                <button className="bg-primary-color hover:bg-primary-hover-color text-white font-bold py-2 px-4 rounded">
+                    <a href="/create-ticket">Create Ticket</a>
+                </button>
+            </div>
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2">
-                    {Ticket.map((ticket, index) => (
-                        <TicketCard key={index} ticket={ticket} />
+                    {Ticket.map((ticket) => (
+                        <TicketCard key={ticket._id} ticket={ticket} />
                     ))}
                 </div>
             </div>
