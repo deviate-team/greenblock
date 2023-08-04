@@ -3,7 +3,7 @@ import { projectService } from "@/services/projects.services";
 import React, { useState } from "react";
 import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 
-const CreateProjectPage = () => {
+const CreateCrowdFundingPage = () => {
   const [dateValue, setDateValue] = useState<DateValueType>({
     startDate: null,
     endDate: null,
@@ -246,4 +246,4 @@ const CreateProjectPage = () => {
   );
 };
 
-export default CreateProjectPage;
+export default CreateCrowdFundingPage;

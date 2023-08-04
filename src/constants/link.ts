@@ -47,11 +47,11 @@ export const ProviderLink: ILink[] = [
         "title": 'Tickets',
     },
     {
-        "pathName": '/projects',
-        "title": 'Projects',
+        "pathName": '/crowdfunding',
+        "title": 'Crowdfunding',
     },{
-        "pathName": '/create-project',
-        "title": 'Create Project',
+        "pathName": '/create-crowdfunding',
+        "title": 'Create Crowdfunding',
     },
     {
         "pathName": '/marketplace',

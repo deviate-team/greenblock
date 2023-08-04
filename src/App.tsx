@@ -14,11 +14,11 @@ import MarketplacesPage from "@/pages/MarketplacesPage";
 import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
-import ProjectPage from "@/pages/ProjectPage";
-import ProjectDetailPage from "@/pages/ProjectDetailPage";
-import CreateProjectPage from "@/pages/CreateProjectPage";
+import CrowdFundingDetailPage from "@/pages/CrowdfundingDetailPage";
+import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import TestMapPage from "@/pages/TestMapPage";
 import TicketPage from "@/pages/TicketPage";
+import CrowdFundingPage from "@/pages/CrowdFundingPage";
 
 const App = () => {
   return (
@@ -31,12 +31,12 @@ const App = () => {
           <Route path="/marketplace/:id" element={<MarketplacePage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/swap" element={<SwapPage />} />
-          <Route path="/projects" element={<ProjectPage />} />
-          <Route path="/projects/:id" element={<ProjectDetailPage />} />
+          <Route path="/crowdfunding" element={<CrowdFundingPage />} />
+          <Route path="/crowdfunding/:id" element={<CrowdFundingDetailPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history-detail" element={<HistoryDetailPage />} />
-          <Route path="/create-project" element={<CreateProjectPage />} />
+          <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
           <Route path="/test-map" element={<TestMapPage />} />
           <Route path="/confirm" element={<ConfirmPage />} />

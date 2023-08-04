@@ -19,7 +19,7 @@ export interface IProject {
   _id: string;
   image: string;
   maximum: number;
-  amount: number;
+amount: number;
   member: string[];
   createdAt: string;
   updatedAt: string;
