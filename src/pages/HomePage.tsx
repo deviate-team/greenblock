@@ -5,6 +5,7 @@ const HomePage = () => {
     return (
         <>
             <Feature />
+            <div></div>
             <News />
         </>
     )
