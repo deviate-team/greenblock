@@ -72,7 +72,7 @@ const Navbar = () => {
                         {
                             linksToRender.map((link, index) => (
                                 <li key={index}>
-                                    <button onClick={() => handleNavigate(link.pathName)} className={`block py-2 pl-3 pr-4 ${location.pathname === link.pathName ? "text-white bg-primary-color md:text-primary-color md:underline underline-offset-8 decoration-primary-color" : "text-gray-900"} rounded md:bg-transparent md:p-0`}>
+                                    <button onClick={() => handleNavigate(link.pathName)} className={`block py-2 pl-3 pr-4 ${location.pathname === link.pathName ? "text-white bg-primary-color w-full md:text-primary-color md:underline underline-offset-8 decoration-primary-color" : "text-gray-900"} rounded md:bg-transparent md:p-0`}>
                                         {link.title}
                                     </button>
                                 </li>
