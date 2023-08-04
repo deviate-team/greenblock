@@ -11,9 +11,9 @@ export const ticketService = {
             throw new Error(message);
         }
     },
-    async getTicketList(page: number) {
+    async getTicketList(page: string) {
         try {
-            const response = await axiosInstance.get(`/tickets/list?$page=${page}&limit=5`);
+            const response = await axiosInstance.get(`/tickets/list?page=${page}&limit=3`);
             return response.data;
         }
         catch (error) {

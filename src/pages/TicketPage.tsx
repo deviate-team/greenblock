@@ -5,12 +5,12 @@ import { useEffect, useState } from "react"
 
 const TicketPage = () => {
     const [Ticket, setTicket] = useState<ITicketData[]>([]);
-    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [currentPage, setCurrentPage] = useState<number>(2);
     const [limitPage, setLimitPage] = useState<number>(1);
 
-    const fetchTicketList = async (): Promise<void> => {
+    const fetchTicketList = async (page: number): Promise<void> => {
         try {
-            const response = await ticketService.getTicketList(currentPage);
+            const response = await ticketService.getTicketList(page.toString());
             setTicket(response.data.tickets);
             setLimitPage(response.data.totalPages);
         } catch (error) {
@@ -18,10 +18,6 @@ const TicketPage = () => {
             throw new Error(message);
         }
     }
-
-    useEffect(() => {
-        fetchTicketList();
-    }, [])
 
     const nextPage = () => {
         setCurrentPage(currentPage + 1);
@@ -32,6 +28,10 @@ const TicketPage = () => {
             setCurrentPage(currentPage - 1);
         }
     };
+
+    useEffect(() => {
+        fetchTicketList(currentPage);
+    }, [currentPage])
 
     const renderPaginationLinks = () => {
         const links = [];
