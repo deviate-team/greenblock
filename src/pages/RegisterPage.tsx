@@ -21,7 +21,8 @@ const RegisterPage = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
-        await userService.register(user.email, user.firstName, user.middleName, user.phoneNumber, user.lastName, user.birthDate, user.username, user.password, user.confirmPassword);
+
+        await userService.register(user.email,user.firstName, user.middleName, user.lastName, new Date(user.birthDate).toISOString(), user.phoneNumber, user.username, user.password, user.confirmPassword)
         window.location.href = '/';
     }
 
