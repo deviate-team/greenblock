@@ -1,16 +1,18 @@
 import TicketCard from "@/components/TicketCard"
-import { ITicket } from "@/interfaces/ticket"
+import { ITicketData } from "@/interfaces/ticket"
 import { ticketService } from "@/services/ticket.services"
 import { useEffect, useState } from "react"
 
 const TicketPage = () => {
+    const [Ticket, setTicket] = useState<ITicketData[]>([]);
+    const [currentPage, setCurrentPage] = useState<number>(1);
+    const [limitPage, setLimitPage] = useState<number>(1);
 
-    const [Ticket, setTicket] = useState<ITicket[]>([])
-
-    const fetchTicket = async (): Promise<void> => {
+    const fetchTicketList = async (): Promise<void> => {
         try {
-            const response = await ticketService.getTickets();
-            setTicket(response.data);
+            const response = await ticketService.getTicketList(currentPage);
+            setTicket(response.data.tickets);
+            setLimitPage(response.data.totalPages);
         } catch (error) {
             const message = (error as Error).message;
             throw new Error(message);
@@ -18,14 +20,75 @@ const TicketPage = () => {
     }
 
     useEffect(() => {
-        fetchTicket();
+        fetchTicketList();
     }, [])
+
+    const nextPage = () => {
+        setCurrentPage(currentPage + 1);
+    };
+
+    const prevPage = () => {
+        if (currentPage > 1) {
+            setCurrentPage(currentPage - 1);
+        }
+    };
+
+    const renderPaginationLinks = () => {
+        const links = [];
+
+        if (currentPage > 1) {
+            links.push(
+                <button className="flex items-center justify-center px-3 h-8 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700" onClick={prevPage}>
+                    <svg className="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4" />
+                    </svg>
+                </button>
+            );
+        }
+
+        for (let page = 1; page <= limitPage; page++) {
+            links.push(
+                <button
+                    key={page}
+                    className={`rounded px-4 py-2 hover:bg-gray-100 ${currentPage === page ? 'bg-gray-200' : ''}`}
+                    onClick={() => setCurrentPage(page)}
+                >
+                    {page}
+                </button>,
+            );
+        }
+
+        if (currentPage < limitPage) {
+            links.push(
+                <button
+                    className="flex items-center justify-center px-3 h-8 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700"
+                    onClick={nextPage}
+                >
+                    <svg className="w-2.5 h-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                    </svg>
+                </button>
+            );
+        }
+
+        return links;
+    };
+
     return (
-        <div className="flex justify-center">
-            <div className="grid grid-cols-1 md:grid-cols-2">
-                {Ticket.map((ticket, index) => (
-                    <TicketCard key={index} ticket={ticket} />
-                ))}
+        <div>
+            <div className="flex justify-center">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                    {Ticket.map((ticket, index) => (
+                        <TicketCard key={index} ticket={ticket} />
+                    ))}
+                </div>
+            </div>
+            <div className="mt-3 flex justify-end pb-2 mx-auto container">
+                <nav
+                    className="flex items-center text-gray-600"
+                >
+                    {renderPaginationLinks()}
+                </nav>
             </div>
         </div>
     )

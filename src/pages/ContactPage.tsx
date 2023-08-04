@@ -13,7 +13,7 @@ const ContactPage = () => {
                         {Team.map((member, index) => (
                             <div className="items-center bg-gray-50 rounded-lg shadow sm:flex" key={index}>
                                 <a href="#">
-                                    <img className="w-72 h-72 rounded-lg sm:rounded-none sm:rounded-l-lg object-cover" src={member.image} alt="Avatar" />
+                                    <img className="w-full md:w-72 h-72 md:rounded-lg sm:rounded-none sm:rounded-l-lg object-cover" src={member.image} alt="Avatar" />
                                 </a>
                                 <div className="p-5">
                                     <h3 className="text-xl font-bold tracking-tight text-gray-900">
