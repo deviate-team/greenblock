@@ -29,10 +29,11 @@ export interface IProject {
 export interface ICreateProject {
   name: string
   description: string
-  date: string
   contract: string
   price_by_unit: number
   maximum: number
   image:string
   time_period: ITimePeriod
 }
+
+export type IProjectForm = ICreateProject

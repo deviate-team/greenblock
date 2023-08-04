@@ -15,7 +15,7 @@ import TicketPage from "@/pages/TicketPage";
 import SwapPage from "@/pages/SwapPage";
 import ProjectPage from "@/pages/ProjectPage";
 import ProjectDetailPage from "@/pages/ProjectDetailPage";
-import CreateOfferPage from "@/pages/CreateOfferPage";
+import CreateProjectPage from "@/pages/CreateProjectPage";
 import TestMapPage from "@/pages/TestMapPage";
 
 const App = () => {
@@ -34,7 +34,7 @@ const App = () => {
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/history-detail" element={<HistoryDetailPage />} />
-          <Route path="/create-offer" element={<CreateOfferPage />} />
+          <Route path="/create-project" element={<CreateProjectPage />} />
           <Route path="/test-map" element={<TestMapPage />} />
         </Route>
         <Route element={<AuthLayout />}>
