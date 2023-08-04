@@ -6,7 +6,7 @@ import axios, {
 } from 'axios';
 import Cookies from 'js-cookie';
 
-const baseURL = import.meta.env.VITE_API_PATH;
+const baseURL = import.meta.env.VITE_API_PATH || 'https://api.1tpp.dev';
 
 export const axiosInstance: AxiosInstance = axios.create({
     baseURL,
