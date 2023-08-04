@@ -19,5 +19,14 @@ export const projectService = {
       const message = (error as Error).message;
       throw new Error(message);
     }
-  }
-}
+  },
+  async getProject(id: string) {
+    try {
+      const response = await axiosInstance.get(`/projects/${id}`);
+      return response.data;
+    } catch (error) {
+      const message = (error as Error).message;
+      throw new Error(message);
+    }
+  },
+};
