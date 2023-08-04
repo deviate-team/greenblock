@@ -13,7 +13,7 @@ export const ticketService = {
     },
     async getTicketList(page: string) {
         try {
-            const response = await axiosInstance.get(`/tickets/list?page=${page}&limit=3`);
+            const response = await axiosInstance.get(`/tickets/list?page=${page}&limit=4`);
             return response.data;
         }
         catch (error) {
