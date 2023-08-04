@@ -16,6 +16,7 @@ import MarketplacesPage from "@/pages/MarketplacesPage";
 import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
+import TestMapPage from "@/pages/TestMapPage";
 import TicketPage from "@/pages/TicketPage";
 
 const App = () => {
@@ -36,13 +37,14 @@ const App = () => {
           <Route path="/history-detail" element={<HistoryDetailPage />} />
           <Route path="/create-offer" element={<CreateOfferPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
-        </Route>
+          <Route path="/test-map" element={<TestMapPage />} />
+        </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
         </Route>
-      </Routes>
-    </BrowserRouter>
+      </Routes >
+    </BrowserRouter >
   );
 };
 

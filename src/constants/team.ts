@@ -47,7 +47,7 @@ export const Team: ITeam[] = [
     },
     {
         id: 5,
-        name: "Pannapat Pillapa",
+        name: "Panapat Pilapa",
         facebook_link: "https://www.facebook.com/1tpp.me",
         instagram_link: "https://www.instagram.com/1tpp.27/",
         github_link: "https://github.com/1tpp",
