@@ -29,11 +29,11 @@ const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
 
                     <div className="flex flex-col p-2">
                         <p className="font-bold">{formatTime(ticket.depart_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">Market Street</span></p>
+                        <p className="text-gray-500"><span className="font-bold">Bangkok</span></p>
                     </div>
                     <div className="flex flex-col flex-wrap p-2">
                         <p className="font-bold">{formatTime(ticket.arrive_time)}</p>
-                        <p className="text-gray-500"><span className="font-bold">Los Angeles Police Department</span></p>
+                        <p className="text-gray-500"><span className="font-bold">Chiangmai</span></p>
                     </div>
                 </div>
                 <div className="mt-4 bg-gray-100 flex flex-row flex-wrap md:flex-nowrap justify-between items-baseline">
