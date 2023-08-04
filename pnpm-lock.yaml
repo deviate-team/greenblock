@@ -984,7 +984,7 @@ packages:
     dev: false
 
   /chartjs-plugin-datalabels@2.2.0(chart.js@3.9.1):
-    resolution: {integrity: sha512-14ZU30lH7n89oq+A4bWaJPnAG8a7ZTk7dKf48YAzMvJjQtjrgg5Dpk9f+LbjCF6bpx3RAGTeL13IXpKQYyRvlw==}
+    resolution: {integrity: sha512-14ZU30lH7n89oq+A4bWaJPnAG8a7ZTk7dKf48YAzMvJjQtjrgg5Dpk9f+LbjCF6bpx3RAGphoneNumber13IXpKQYyRvlw==}
     peerDependencies:
       chart.js: '>=3.0.0'
     dependencies:
@@ -1672,7 +1672,7 @@ packages:
     hasBin: true
 
   /natural-compare-lite@1.4.0:
-    resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GtEly5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
+    resolution: {integrity: sha512-Tj+HTDSJJKaZnfiuw+iaF9skdPpTo2GphoneNumbery5JHnWV/hfv2Qj/9RKsGISQtLh2ox3l5EAGw487hnBee0sIJ6v2g==}
     dev: true
 
   /natural-compare@1.4.0:

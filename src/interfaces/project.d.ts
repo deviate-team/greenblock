@@ -29,8 +29,8 @@ export interface ICreateProject {
     email: string;
     phoneNumber: string;
   };
-  start_date: Date;
-  end_date: Date;
+  start_date: string;
+  end_date: string;
   image: string;
   max_shares: number;
 }

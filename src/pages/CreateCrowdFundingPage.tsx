@@ -12,16 +12,13 @@ const CreateCrowdFundingPage = () => {
     name: "",
     description: "",
     image: "",
-    time_period: {
-      start: "",
-      end: "",
-    },
-    price_by_unit: 0,
-    maximum: 0,
+    start_date: "",
+    end_date: "",
+    max_shares: 0,
     contract: {
       name: "",
       email: "",
-      tel: "",
+      phoneNumber: "",
     },
   });
 
@@ -35,10 +32,8 @@ const CreateCrowdFundingPage = () => {
       : "";
     setProject({
       ...project,
-      time_period: {
-        start: startDateValue,
-        end: endDateValue,
-      },
+      start_date: startDateValue,
+      end_date: endDateValue,
     });
   };
 
@@ -50,16 +45,13 @@ const CreateCrowdFundingPage = () => {
         name: "",
         description: "",
         image: "",
-        time_period: {
-          start: "",
-          end: "",
-        },
-        price_by_unit: 0,
-        maximum: 0,
+        start_date: "",
+        end_date: "",
+        max_shares: 0,
         contract: {
           name: "",
           email: "",
-          tel: "",
+          phoneNumber: "",
         },
       });
 
@@ -137,25 +129,6 @@ const CreateCrowdFundingPage = () => {
                 onChange={handleChangeDateValue}
               />
             </div>
-            <div className="">
-              <label className="block font-medium text-gray-700">
-                Price Per Unit
-              </label>
-              <input
-                type="number"
-                id="pricePerUnit"
-                placeholder="Price Per Unit"
-                className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={project.price_by_unit}
-                onChange={(e) =>
-                  setProject({
-                    ...project,
-                    price_by_unit: e.target.valueAsNumber,
-                  })
-                }
-                required
-              />
-            </div>
             <div className="mb-4">
               <label className="block font-medium text-gray-700">
                 Maximum Offer
@@ -165,9 +138,9 @@ const CreateCrowdFundingPage = () => {
                 id="maximumOffer"
                 placeholder="Maximum Offer"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={project.maximum}
+                value={project.max_shares}
                 onChange={(e) =>
-                  setProject({ ...project, maximum: e.target.valueAsNumber })
+                  setProject({ ...project, max_shares: e.target.valueAsNumber })
                 }
                 required
               />
@@ -221,11 +194,11 @@ const CreateCrowdFundingPage = () => {
                 id="contractPhone"
                 placeholder="Contract Phone"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={project.contract.tel}
+                value={project.contract.phoneNumber}
                 onChange={(e) =>
                   setProject({
                     ...project,
-                    contract: { ...project.contract, tel: e.target.value },
+                    contract: { ...project.contract, phoneNumber: e.target.value },
                   })
                 }
                 required

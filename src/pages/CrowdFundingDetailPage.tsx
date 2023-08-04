@@ -155,7 +155,7 @@ const CrowdFundingDetailPage = () => {
                     />
                   </svg>
                   <p>
-                    Tel : <span>{project?.contract.phoneNumber}</span>
+                    phoneNumber : <span>{project?.contract.phoneNumber}</span>
                   </p>
                 </div>
               </div>
