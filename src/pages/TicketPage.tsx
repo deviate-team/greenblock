@@ -1,18 +1,34 @@
 import TicketCard from "@/components/TicketCard"
 import { ITicketData } from "@/interfaces/ticket"
+import { IUserProfile } from "@/interfaces/user"
 import { ticketService } from "@/services/ticket.services"
+import { userService } from "@/services/user.services"
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 const TicketPage = () => {
     const [Ticket, setTicket] = useState<ITicketData[]>([]);
     const [currentPage, setCurrentPage] = useState<number>(1);
     const [limitPage, setLimitPage] = useState<number>(1);
+    const [user, setUser] = useState<IUserProfile | null>(null)
+
+    const navigate = useNavigate();
 
     const fetchTicketList = async (page: number): Promise<void> => {
         try {
             const response = await ticketService.getTicketList(page.toString());
             setTicket(response.data.tickets);
             setLimitPage(response.data.totalPages);
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    }
+
+    const fetchUser = async (): Promise<void> => {
+        try {
+            const response = await userService.getUserProfile();
+            setUser(response.data);
         } catch (error) {
             const message = (error as Error).message;
             throw new Error(message);
@@ -31,6 +47,7 @@ const TicketPage = () => {
 
     useEffect(() => {
         fetchTicketList(currentPage);
+        fetchUser();
     }, [currentPage])
 
     const renderPaginationLinks = () => {
@@ -75,13 +92,17 @@ const TicketPage = () => {
         return links;
     };
 
+    const handleLink = (path: string): void => {
+        navigate(path);
+    }
+
     return (
         <div>
-            <div className="flex justify-end mx-auto container">
-                <button className="bg-primary-color hover:bg-primary-hover-color text-white font-bold py-2 px-4 rounded">
-                    <a href="/create-ticket">Create Ticket</a>
-                </button>
-            </div>
+            {user?.role === "provider" && (
+                <div className="flex justify-end container mx-auto">
+                    <button onClick={() => handleLink('/create-ticket')} className=" bg-primary-color p-2 rounded text-white px-5">Create</button>
+                </div>
+            )}
             <div className="flex justify-center">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     {Ticket.map((ticket) => (
