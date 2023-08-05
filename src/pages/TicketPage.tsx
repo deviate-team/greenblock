@@ -82,9 +82,8 @@ const TicketPage = () => {
       links.push(
         <button
           key={page}
-          className={`rounded px-4 py-2 hover:bg-gray-100 ${
-            currentPage === page ? "bg-gray-200" : ""
-          }`}
+          className={`rounded px-4 py-2 hover:bg-gray-100 ${currentPage === page ? "bg-gray-200" : ""
+            }`}
           onClick={() => setCurrentPage(page)}
         >
           {page}
@@ -126,9 +125,8 @@ const TicketPage = () => {
   }
 
   return (
-
     <div className="container lg:max-w-screen-xl mx-auto p-4 space-y-6 font-BAI ">
-        <div className="relative overflow-hidden w-full max-h-96 bg-fixed mb-10">
+      <div className="relative overflow-hidden w-full max-h-96 bg-fixed mb-10">
         <img
           src="/tuk-tuk.jpg"
           alt="Hero Image"
@@ -166,6 +164,7 @@ const TicketPage = () => {
           ))}
         </div>
       </div>
+
       <div className="mt-3 flex justify-end pb-2 mx-auto container">
         <nav className="flex items-center text-gray-600">
           {renderPaginationLinks()}

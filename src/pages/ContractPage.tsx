@@ -1,6 +1,6 @@
 import { Team } from "@/constants/team"
 
-const ContactPage = () => {
+const ContractPage = () => {
     return (
         <div>
             <section className="bg-white text-gray-800">
@@ -47,4 +47,4 @@ const ContactPage = () => {
     )
 }
 
-export default ContactPage
+export default ContractPage

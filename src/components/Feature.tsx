@@ -55,25 +55,25 @@ const Feature = () => {
                         <div className="space-y-1">
                             <li className="mb-0 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color">
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
                                     <path strokeLinecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Online transportation booking
                             </li>
                             <li className="mb-4 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" className="mr-3 h-5 w-5 text-primary">
+                                stroke="currentColor" className="mr-3 h-5 w-5 text-primary dark:text-primary-400">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Carbon footprint tracking
                             </li>
                             <li className="mb-4 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color">
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Green Tourist Certificate
                             </li>
                             <li className="mb-4 flex">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color">
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Special discount & more
                             </li>

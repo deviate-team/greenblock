@@ -1,4 +1,4 @@
-import { ICreateTicket } from "@/interfaces/ticket";
+import { IBookingTicket, ICreateTicket } from "@/interfaces/ticket";
 import axiosInstance from "./api.services";
 
 export const ticketService = {
@@ -25,6 +25,16 @@ export const ticketService = {
     async createTicket(data: ICreateTicket) {
         try {
             const response = await axiosInstance.post('/tickets', data);
+            return response.data;
+        }
+        catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    },
+    async bookingTickets(data: IBookingTicket, id: string) {
+        try {
+            const response = await axiosInstance.post(`/tickets/${id}/book`, data);
             return response.data;
         }
         catch (error) {

@@ -60,3 +60,8 @@ export interface ICreateTicket {
     business_price: number;
     seat_limit: number;
 }
+
+export interface IBookingTicket {
+    quantity: number;
+    option: string;
+}

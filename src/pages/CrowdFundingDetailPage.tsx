@@ -77,8 +77,8 @@ const CrowdFundingDetailPage = () => {
               <p>
                 Date :{" "}
                 <span>
-                  {formatDate(project?.time_period.start as string)} -{" "}
-                  {formatDate(project?.time_period.end as string)}
+                  {formatDate(project?.start_date as string)} -{" "}
+                  {formatDate(project?.end_date as string)}
                 </span>
               </p>
             </div>
@@ -97,11 +97,11 @@ const CrowdFundingDetailPage = () => {
                 />
               </svg>
               <p>
-                Price Per Unit : <span>${project?.price_by_unit}</span>
+                Share : <span>{project?.max_shares}</span>
               </p>
             </div>
             <div>
-              <p className="text-lg font-medium mb-2">Contact</p>
+              <p className="text-lg font-medium mb-2">contract</p>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <svg
@@ -155,7 +155,7 @@ const CrowdFundingDetailPage = () => {
                     />
                   </svg>
                   <p>
-                    Tel : <span>{project?.contract.tel}</span>
+                    phoneNumber : <span>{project?.contract.phoneNumber}</span>
                   </p>
                 </div>
               </div>
@@ -185,7 +185,7 @@ const CrowdFundingDetailPage = () => {
               onClick={handleBuy}
               className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
             >
-              Buy
+              Join
             </button>
           </div>
         </div>

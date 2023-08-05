@@ -40,8 +40,8 @@ const CrowdFundingPage = () => {
           </span>{" "}
           Funding
         </h1>
-        <p className="text-xl font-BAI font-medium text-center text-gray-600">
-          Drive sustainability and profitability for your small business through
+          <p className="text-xl font-BAI font-medium text-center text-gray-600">
+                    Drive sustainability and profitability for your small business through
           our Crowd Funding on Carbon Project! Offer carbon reduction projects
           and attract funding to earn valuable carbon credits for sale. Join now
           and make a real impact in the fight against climate change!
@@ -177,8 +177,8 @@ const CrowdFundingPage = () => {
                     />
                   </svg>
                   <p>
-                    {formatDate(data.time_period.start)} -{" "}
-                    {formatDate(data.time_period.end)}
+                    {formatDate(data.start_date)} - {" "}
+                    {formatDate(data.end_date)}
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -195,11 +195,13 @@ const CrowdFundingPage = () => {
                       d="M16 16c0-1.105-3.134-2-7-2s-7 .895-7 2s3.134 2 7 2s7-.895 7-2ZM2 16v4.937C2 22.077 5.134 23 9 23s7-.924 7-2.063V16M9 5c-4.418 0-8 .895-8 2s3.582 2 8 2M1 7v5c0 1.013 3.582 2 8 2M23 4c0-1.105-3.1-2-6.923-2c-3.824 0-6.923.895-6.923 2s3.1 2 6.923 2S23 5.105 23 4Zm-7 12c3.824 0 7-.987 7-2V4M9.154 4v10.166M9 9c0 1.013 3.253 2 7.077 2C19.9 11 23 10.013 23 9"
                     />
                   </svg>
-                  <p>${data.price_by_unit}</p>
+                  <p>
+                    Share : <span>{data?.max_shares}</span>
+                  </p>
                 </div>
                 <ProgressBar
-                  maximumValue={data.maximum}
-                  currentAmount={data.amount}
+                  maximumValue={data.max_shares}
+                  currentAmount={data.balance}
                 />
               </div>
             </Link>

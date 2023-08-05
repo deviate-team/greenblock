@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
 import ConfirmPage from "@/pages/ConfirmPage";
-import ContactPage from "@/pages/ContactPage";
+import ContractPage from "@/pages/ContractPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
 import HistoryDetailPage from "@/pages/HistoryDetailPage";
 import HistoryPage from "@/pages/HistoryPage";
@@ -28,7 +28,7 @@ const App = () => {
           <Route path="/ticket" element={<TicketPage />} />
           <Route path="/marketplace" element={<MarketplacesPage />} />
           <Route path="/marketplace/:id" element={<MarketplacePage />} />
-          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/contract" element={<ContractPage />} />
           <Route path="/swap" element={<SwapPage />} />
           <Route path="/crowdfunding" element={<CrowdFundingPage />} />
           <Route path="/crowdfunding/:id" element={<CrowdFundingDetailPage />} />
