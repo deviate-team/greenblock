@@ -34,7 +34,7 @@ const CrowdFundingPage = () => {
   return (
     <div className="container lg:max-w-screen-xl mx-auto p-4 space-y-6 font-BAI">
       <section>
-        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl text-center">
+        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center">
           <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
             Crowd
           </span>{" "}
@@ -61,7 +61,7 @@ const CrowdFundingPage = () => {
           >
             <div
               data-te-stepper-head-ref
-              className="flex cursor-pointer items-center pl-2 leading-[1.3rem] no-underline after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]"
+              className="flex cursor-pointer items-center pl-2 leading-[1.3rem] no-underline after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none"
             >
               <span
                 data-te-stepper-head-icon-ref
@@ -71,7 +71,7 @@ const CrowdFundingPage = () => {
               </span>
               <span
                 data-te-stepper-head-text-ref
-                className="font-medium text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] dark:text-neutral-300"
+                className="font-medium text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]"
               >
                 step1
               </span>
@@ -87,7 +87,7 @@ const CrowdFundingPage = () => {
           <li data-te-stepper-step-ref className="w-[4.5rem] flex-auto">
             <div
               data-te-stepper-head-ref
-              className="flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:before:bg-neutral-600 dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]"
+              className="flex cursor-pointer items-center leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] after:ml-2 after:h-px after:w-full after:flex-1 after:bg-[#e0e0e0] after:content-[''] hover:bg-[#f9f9f9] focus:outline-none"
             >
               <span
                 data-te-stepper-head-icon-ref
@@ -97,7 +97,7 @@ const CrowdFundingPage = () => {
               </span>
               <span
                 data-te-stepper-head-text-ref
-                className="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] dark:text-neutral-300"
+                className="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]"
               >
                 step2
               </span>
@@ -113,7 +113,7 @@ const CrowdFundingPage = () => {
           <li data-te-stepper-step-ref className="w-[4.5rem] flex-auto">
             <div
               data-te-stepper-head-ref
-              className="flex cursor-pointer items-center pr-2 leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] hover:bg-[#f9f9f9] focus:outline-none dark:before:bg-neutral-600 dark:after:bg-neutral-600 dark:hover:bg-[#3b3b3b]"
+              className="flex cursor-pointer items-center pr-2 leading-[1.3rem] no-underline before:mr-2 before:h-px before:w-full before:flex-1 before:bg-[#e0e0e0] before:content-[''] hover:bg-[#f9f9f9] focus:outline-none"
             >
               <span
                 data-te-stepper-head-icon-ref
@@ -123,7 +123,7 @@ const CrowdFundingPage = () => {
               </span>
               <span
                 data-te-stepper-head-text-ref
-                className="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content] dark:text-neutral-300"
+                className="text-neutral-500 after:flex after:text-[0.8rem] after:content-[data-content]"
               >
                 step3
               </span>
