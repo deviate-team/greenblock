@@ -1,7 +1,7 @@
 const TicketReceipt = () => {
     return (
         <div className="flex flex-col items-center justify-center mb-10">
-            <div className="max-w-md w-full h-full mx-auto z-10 bg-primary-color rounded-3xl">
+            <div className="w-96 h-full mx-auto z-10 bg-primary-color rounded-3xl">
                 <div className="flex flex-col">
                     <div className="bg-white relative drop-shadow-2xl rounded-3xl p-4 m-4 font-BAI">
                         <div className="flex-none sm:flex">
