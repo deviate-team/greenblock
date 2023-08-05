@@ -2,7 +2,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
-import ConfirmPage from "@/pages/ConfirmPage";
 import ContractPage from "@/pages/ContractPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
 import HistoryDetailPage from "@/pages/HistoryDetailPage";
@@ -37,7 +36,6 @@ const App = () => {
           <Route path="/history-detail" element={<HistoryDetailPage />} />
           <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
-          <Route path="/confirm" element={<ConfirmPage />} />
         </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
