@@ -1,6 +1,6 @@
 const TicketReceipt = () => {
     return (
-        <div className="flex flex-col items-center justify-center mb-10">
+        <div className="flex flex-col items-center justify-center mt-10">
             <div className="w-96 h-full mx-auto z-10 bg-primary-color rounded-3xl">
                 <div className="flex flex-col">
                     <div className="bg-white relative drop-shadow-2xl rounded-3xl p-4 m-4 font-BAI">
@@ -8,7 +8,7 @@ const TicketReceipt = () => {
                             <div className=" relative h-32 w-32   sm:mb-0 mb-3 hidden">
                                 <img src="https://tailwindcomponents.com/storage/avatars/njkIbPhyZCftc4g9XbMWwVsa7aGVPajYLRXhEeoo.jpg" alt="aji" className=" w-32 h-32 object-cover rounded-2xl" />
                                 <a href="#"
-                                    className="absolute -right-2 bottom-2 -ml-3 text-white p-1 text-xs bg-green-400 hover:bg-green-500 font-medium tracking-wider rounded-full transition ease-in duration-300">
+                                    className="absolute -right-2 bottom-2 -ml-3 text-white p-1 text-xs bg-primary-color hover:bg-primary-hover-color font-medium tracking-wider rounded-full transition ease-in duration-300">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                                         className="h-4 w-4">
                                         <path
