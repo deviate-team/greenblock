@@ -2,9 +2,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
-import ConfirmPage from "@/pages/ConfirmPage";
 import ContractPage from "@/pages/ContractPage";
+import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
+import CrowdFundingDetailPage from "@/pages/CrowdFundingDetailPage";
+import CrowdFundingPage from "@/pages/CrowdFundingPage";
 import HistoryDetailPage from "@/pages/HistoryDetailPage";
 import HistoryPage from "@/pages/HistoryPage";
 import HomePage from "@/pages/HomePage";
@@ -14,10 +16,7 @@ import MarketplacesPage from "@/pages/MarketplacesPage";
 import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
-import CrowdFundingDetailPage from "@/pages/CrowdFundingDetailPage";
-import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import TicketPage from "@/pages/TicketPage";
-import CrowdFundingPage from "@/pages/CrowdFundingPage";
 
 const App = () => {
   return (
@@ -34,10 +33,9 @@ const App = () => {
           <Route path="/crowdfunding/:id" element={<CrowdFundingDetailPage />} />
           <Route path="/history" element={<HistoryPage />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/history-detail" element={<HistoryDetailPage />} />
+          <Route path="/history-detail/:id" element={<HistoryDetailPage />} />
           <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
-          <Route path="/confirm" element={<ConfirmPage />} />
         </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
