@@ -5,13 +5,17 @@ export interface IUser {
 }
 
 export interface IUserProfile {
+    money: number;
+    retailCC: number;
+    carbonCredit: number;
     _id: string;
     email: string;
     firstName: string;
-    middleName: string;
     lastName: string;
     username: string;
     birthDate: string;
+    phoneNumber: string;
+    imageProfile: string;
     role: string;
     createdAt: string;
     updatedAt: string;
