@@ -51,10 +51,18 @@ const Payment = ({ onPaymentComplete }: PaymentProps) => {
                         <input className="w-full px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none transition-colors" placeholder="0000 0000 0000 0000" type="text" />
                     </div>
                 </div>
-                <div className="mb-10">
-                    <label className="font-bold text-sm mb-2 ml-1">Security code</label>
+                <div className="mb-10 flex justify-between">
                     <div>
-                        <input className="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none transition-colors" placeholder="000" type="text" />
+                        <label className="font-bold text-sm mb-2 ml-1">Security code</label>
+                        <div>
+                            <input className="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none transition-colors" placeholder="000" type="text" />
+                        </div>
+                    </div>
+                    <div>
+                        <label className="font-bold text-sm mb-2 ml-1">Expiry Date</label>
+                        <div>
+                            <input className="w-32 px-3 py-2 mb-1 border-2 border-gray-200 rounded-md focus:outline-none transition-colors" placeholder="MM/DD" type="text" />
+                        </div>
                     </div>
                 </div>
                 <div>
