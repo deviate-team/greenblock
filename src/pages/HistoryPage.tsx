@@ -110,19 +110,19 @@ const HistoryPage = () => {
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                Ticket ID
+                                Transcation ID
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Type
+                                Transcation Type
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Owner
+                                Transcation Owner
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Price
+                                Transcation Price
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Status
+                                Transcation Status
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Action

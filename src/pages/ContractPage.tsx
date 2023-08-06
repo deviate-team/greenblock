@@ -7,7 +7,7 @@ const ContractPage = () => {
                 <div className="container p-4 mx-auto space-y-16 sm:p-10">
                     <div className="space-y-4">
                         <h3 className="text-2xl font-bold leadi sm:text-5xl font-IBM">Meet our team</h3>
-                        <p className="max-w-2xltext-gray-400 font-BAI">At a assumenda quas cum earum ut itaque commodi saepe rem aspernatur quam natus quis nihil quod, hic explicabo doloribus magnam neque, exercitationem eius sunt!</p>
+                        <p className="max-w-2xltext-gray-400 font-BAI">Deviate Team was created by a group of four students who wanted to work or study on software development or other topics that interested them, regardless of whether they learned it in a classroom or not. They chose to learn or explore beyond the textbook or formal education, hence the name Deviate, which means outside the norm or beyond boundaries. This can be interpreted as them studying or learning what they're interested in without any external forces compelling them. They chose to follow their own paths based on their interests.</p>
                     </div>
                     <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
                         {Team.map((member, index) => (
