@@ -1,4 +1,12 @@
+import { useNavigate } from "react-router-dom";
+
 const BookingSuccess = () => {
+
+    const navigate = useNavigate();
+
+    const handleNavigate = () => {
+        navigate('/');
+    }
     return (
         <div>
             <div className="bg-white p-6  md:mx-auto">
@@ -12,9 +20,9 @@ const BookingSuccess = () => {
                     <p className="text-gray-600 my-2">Thank you for completing your secure online booking.</p>
                     <p> Have a great day!  </p>
                     <div className="py-10 text-center">
-                        <a href="/" className="px-12 bg-primary-color hover:bg-primary-hover-color text-white font-semibold py-3">
+                        <button onClick={() => handleNavigate()} className="px-12 bg-primary-color hover:bg-primary-hover-color text-white font-semibold py-3">
                             GO BACK
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div></div>

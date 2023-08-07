@@ -11,7 +11,7 @@ const ContractPage = () => {
                     </div>
                     <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-2">
                         {Team.map((member, index) => (
-                            <div className="items-center bg-gray-50 rounded-lg shadow sm:flex" key={index}>
+                            <div className="items-center bg-gray-50 rounded-lg shadow sm:flex font-BAI" key={index}>
                                 <a href="#">
                                     <img className="w-full md:w-72 h-72 md:rounded-lg sm:rounded-none sm:rounded-l-lg object-cover" src={member.image} alt="Avatar" />
                                 </a>
