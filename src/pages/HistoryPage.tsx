@@ -12,7 +12,7 @@ const HistoryPage = () => {
         try {
             const response = await transactionService.getTransactions(page.toString())
             setTransactions(response.data.transactions)
-            setLimitPage(response.data.totalPages - 1)
+            setLimitPage(response.data.totalPages)
         } catch (error) {
             const message = (error as Error).message
             throw new Error(message)
@@ -107,22 +107,22 @@ const HistoryPage = () => {
         <div>
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg container mx-auto mt-10">
                 <table className="w-full text-sm text-gray-500 text-center">
-                    <thead className="text-xs text-gray-700 uppercase bg-gray-50">
+                    <thead className="text-xs text-gray-700 uppercase bg-gray-50 font-BAI">
                         <tr>
                             <th scope="col" className="px-6 py-3">
-                                Ticket ID
+                                Transcation ID
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Type
+                                Transcation Type
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Owner
+                                Transcation Owner
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Price
+                                Transcation Price
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Ticket Status
+                                Transcation Status
                             </th>
                             <th scope="col" className="px-6 py-3">
                                 Action

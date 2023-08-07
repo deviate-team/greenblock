@@ -1,6 +1,7 @@
 import { ILoginForm } from "@/interfaces/form";
 import { userService } from "@/services/user.services";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
@@ -11,8 +12,15 @@ const LoginPage = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
-        await userService.login(user.email, user.password);
-        navigate('/');
+        try {
+            await userService.login(user.email, user.password);
+            toast.success('Login success');
+            setTimeout(() => {
+                navigate('/');
+            }, 2000);
+        } catch (error) {
+            toast.error('Login failed');
+        }
     }
 
     return (
