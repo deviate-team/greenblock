@@ -10,7 +10,7 @@ const HistoryTable = ({ history }: { history: ITransactionItem }) => {
     }
     return (
         <tbody>
-            <tr className="bg-white border-b">
+            <tr className="bg-white border-b font-BAI">
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                     {history._id}
                 </th>
