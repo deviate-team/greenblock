@@ -1,4 +1,40 @@
+import { NonAuthUserLink, ProviderLink, UserLink } from "@/constants/link";
+import { IUserProfile } from "@/interfaces/user";
+import { userService } from "@/services/user.services";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+
 const Feature = () => {
+    const navigate = useNavigate();
+    const [user, setUser] = useState<IUserProfile | null>(null);
+    const fetchUser = async (): Promise<void> => {
+        try {
+            const response = await userService.getUserProfile();
+            setUser(response.data);
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    }
+
+    const handleNavigate = (path: string): void => {
+        navigate(path);
+    }
+
+    let linksToRender;
+
+    if (user?.role === 'user') {
+        linksToRender = UserLink;
+    } else if (user?.role === 'provider') {
+        linksToRender = ProviderLink;
+    } else {
+        linksToRender = NonAuthUserLink;
+    }
+
+    useEffect(() => {
+        fetchUser();
+    }, [])
     return (
         <section className=" bg-white text-primary-color mt-0 py-0 item-center mb-28">
             <div className="relative overflow-hidden w-screen max-h-96 bg-fixed" >
@@ -12,8 +48,12 @@ const Feature = () => {
             </div>
             <div className="container mx-auto p-4 my-8 text-center font-IBM">
                 <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Green Block</span></h1>
-                <p>Welcome To GreenBlock, the best website that make your trip green !</p>
-                <button type="submit" className="w-auto text-white bg-primary-color hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-hover-color font-medium rounded-lg text-sm my-5 px-10 py-2.5 text-center">Start Now</button>
+                <p className = "mx-12 mt-4">Welcome To GreenBlock, the best website that make your trip green !</p>
+                <p className ="text-gray-500 mx-12 mt-4">Welcome to GreenBlock - your eco-friendly transport platform revolutionizing travel with positive environmental impact. Book EVs, public transit, and bikes to reduce your carbon footprint. Earn and trade carbon credits for offsetting emissions, supporting renewable energy and reforestation. Join eco-conscious travelers creating a greener future. Empower change with GreenBlock today!</p>
+                <button onClick={() => handleNavigate('/login')}type="button" className="my-5 inline-block rounded-full px-8 py-3 font-semibold text-white bg-primary-color hover:bg-primary-700 focus:outline-none focus:ring-primary-hover-color hover:shadow-lg">
+                    Start Now
+                </button>
+                {/* <button className="w-auto text-white bg-primary-color hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-hover-color font-medium rounded-lg text-sm my-5 px-10 py-2.5 text-center">Start Now</button> */}
             </div>
 
             <div className="container  mx-auto md:px-6">
@@ -36,7 +76,8 @@ const Feature = () => {
                                     </p>
                                     <button
                                         type="button"
-                                        className="inline-block rounded-full px-8 py-3 font-semibold text-white bg-primary-color hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-hover-color hover:shadow-lg">
+                                        onClick={() => handleNavigate('/ticket')}
+                                        className="inline-block rounded-full px-8 py-3 font-semibold text-white bg-primary-color hover:bg-primary-700 focus:outline-none focus:ring-primary-hover-color hover:shadow-lg">
                                         Donate Here
                                     </button>
                                 </div>
