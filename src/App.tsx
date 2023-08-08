@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
-import ContractPage from "@/pages/ContractPage";
+import ContactPage from "@/pages/ContactPage";
 import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
 import CrowdFundingDetailPage from "@/pages/CrowdFundingDetailPage";
@@ -27,7 +27,7 @@ const App = () => {
           <Route path="/ticket" element={<TicketPage />} />
           <Route path="/marketplace" element={<MarketplacesPage />} />
           <Route path="/marketplace/:id" element={<MarketplacePage />} />
-          <Route path="/contract" element={<ContractPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/swap" element={<SwapPage />} />
           <Route path="/crowdfunding" element={<CrowdFundingPage />} />
           <Route path="/crowdfunding/:id" element={<CrowdFundingDetailPage />} />

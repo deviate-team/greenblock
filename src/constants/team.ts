@@ -16,7 +16,7 @@ export const Team: ITeam[] = [
         facebook_link: 'https://www.facebook.com/rachata.kithatthaporn.9',
         instagram_link: 'https://www.instagram.com/mme.nuu/',
         github_link: 'https://github.com/mmenuu',
-        image: 'https://scontent.fbkk6-2.fna.fbcdn.net/v/t39.30808-6/278199863_509626093990741_5516412313947185163_n.jpg?_nc_cat=101&cb=99be929b-3346023f&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHxZu5FMxYxfHrbSZz-cbHlL9BlOWN9DOQv0GU5Y30M5MlmRkPK8AXarZBykdnbieYxWQP_O6FzGbSE_yFAVZIS&_nc_ohc=XZTeVBoEkrYAX8-E4Fh&_nc_ht=scontent.fbkk6-2.fna&oh=00_AfCct8vvn4hWudkD8KuJ3HY9fzkPTzrNROSBLepUOsEI_g&oe=64CFB031'
+        image: '/menu.jpg'
     },
     {
         id: 2,
