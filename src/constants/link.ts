@@ -13,8 +13,8 @@ export const NonAuthUserLink: ILink[] = [
         "title": 'Tickets',
     },
     {
-        "pathName": '/contract',
-        "title": 'Contract',
+        "pathName": '/contact',
+        "title": 'Contact',
     },
 ]
 
@@ -32,8 +32,8 @@ export const UserLink: ILink[] = [
         "title": 'History',
     },
     {
-        "pathName": '/contract',
-        "title": 'Contract',
+        "pathName": '/contact',
+        "title": 'Contact',
     },
 ]
 
@@ -58,7 +58,7 @@ export const ProviderLink: ILink[] = [
         "title": 'Marketplace',
     },
     {
-        "pathName": '/contract',
-        "title": 'Contract',
+        "pathName": '/contact',
+        "title": 'Contact',
     },
 ]
