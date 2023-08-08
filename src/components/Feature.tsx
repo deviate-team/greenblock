@@ -2,7 +2,7 @@ import { NonAuthUserLink, ProviderLink, UserLink } from "@/constants/link";
 import { IUserProfile } from "@/interfaces/user";
 import { userService } from "@/services/user.services";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Feature = () => {
