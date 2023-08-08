@@ -1,40 +1,13 @@
-import { NonAuthUserLink, ProviderLink, UserLink } from "@/constants/link";
-import { IUserProfile } from "@/interfaces/user";
-import { userService } from "@/services/user.services";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 
 const Feature = () => {
     const navigate = useNavigate();
-    const [user, setUser] = useState<IUserProfile | null>(null);
-    const fetchUser = async (): Promise<void> => {
-        try {
-            const response = await userService.getUserProfile();
-            setUser(response.data);
-        } catch (error) {
-            const message = (error as Error).message;
-            throw new Error(message);
-        }
-    }
+
 
     const handleNavigate = (path: string): void => {
         navigate(path);
     }
-
-    let linksToRender;
-
-    if (user?.role === 'user') {
-        linksToRender = UserLink;
-    } else if (user?.role === 'provider') {
-        linksToRender = ProviderLink;
-    } else {
-        linksToRender = NonAuthUserLink;
-    }
-
-    useEffect(() => {
-        fetchUser();
-    }, [])
     return (
         <section className=" bg-white text-primary-color mt-0 py-0 item-center mb-28">
             <div className="relative overflow-hidden w-screen max-h-96 bg-fixed" >
