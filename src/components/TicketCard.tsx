@@ -5,6 +5,7 @@ import { IUserProfile } from "@/interfaces/user"
 import { userService } from "@/services/user.services"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
+import { useNavigate } from "react-router-dom"
 import BookingSuccess from "./BookingSuccess"
 import Payment from "./Payment"
 import TicketDetail from "./TicketDetail"
@@ -15,12 +16,13 @@ const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
     const [bookingComplete, setBookingComplete] = useState<boolean>(false);
     const [ticketCategory, setTicketCategory] = useState<string>("");
     const [user, setUser] = useState<IUserProfile | null>(null);
+    const navigate = useNavigate();
 
     let bookingIndex = 0
 
     const handleModal = (price: number): void => {
         if (user === null) {
-            toast.error("Please login first!")
+            navigate("/login")
         }
         if (user?.money && user?.money < price) {
             toast.error("You don't have enough money!")

@@ -63,7 +63,7 @@ const CreateTicketPage = () => {
                             >
                                 <MapContainer
                                     className="w-full h-screen"
-                                    center={[arrive_location.lagitude, arrive_location.longitude]} zoom={20} scrollWheelZoom={false}>
+                                    center={[18.784926, 98.9830671]} zoom={20}>
                                     <TileLayer
                                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                                         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

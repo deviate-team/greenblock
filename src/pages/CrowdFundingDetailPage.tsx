@@ -3,11 +3,12 @@ import { formatDate } from "@/hooks/format";
 import { IProject } from "@/interfaces/project";
 import { projectService } from "@/services/projects.services";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 
 const CrowdFundingDetailPage = () => {
   const [offerValue, setOfferValue] = useState<number>(10);
-  const [project, setproject] = useState<IProject>();
+  const [project, setProject] = useState<IProject>();
   const [loading, setLoading] = useState<boolean>(true);
   const { id } = useParams<{ id: string }>();
 
@@ -20,15 +21,20 @@ const CrowdFundingDetailPage = () => {
     setOfferValue(offerValue - 1);
   };
 
-  const handleBuy = () => {
-    alert("Buy Success");
+  const handleBuy = async () => {
+    const response = await projectService.joinProject(id as string, offerValue);
+    if (response.status === 200) {
+      toast.success("Buy project successfully");
+    }
+    else {
+      toast.error("Buy project failed");
+    }
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchProject = async () => {
     try {
       const { data } = await projectService.getProject(id as string);
-      setproject(data);
+      setProject(data);
       setLoading(false);
     } catch (error) {
       const message = (error as Error).message;
@@ -38,11 +44,8 @@ const CrowdFundingDetailPage = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchProject();
-    };
-    fetchData();
-  }, [id, fetchProject]);
+    fetchProject();
+  }, []);
 
   if (loading) return <Loading />;
 

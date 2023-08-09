@@ -29,4 +29,13 @@ export const projectService = {
       throw new Error(message);
     }
   },
+  async joinProject(id: string, amount: number) {
+    try {
+      const response = await axiosInstance.patch(`/projects/${id}/join`, { amount });
+      return response;
+    } catch (error) {
+      const message = (error as Error).message;
+      throw new Error(message);
+    }
+  }
 };
