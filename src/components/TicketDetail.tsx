@@ -1,8 +1,9 @@
-import { formatTime, formatTimestamp } from "@/hooks/format";
+import { formatTime, formatTimestamp, numberWithCommas } from "@/hooks/format";
 import { ITicketData } from "@/interfaces/ticket";
 import { ticketService } from "@/services/ticket.services";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import CarbonDonate from "./CardbonDonate";
 
 type TicketDetailProps = {
     ticket: ITicketData;
@@ -13,6 +14,8 @@ type TicketDetailProps = {
 const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetailProps) => {
     const [quantity, setQuantity] = useState<number>(1);
     const [confirmBooking, setConfirmBooking] = useState<boolean>(false);
+    const [distance, setDistance] = useState<number>(0);
+    const [donation, setDonation] = useState<boolean>(false);
 
     const handleIncreaseQuantity = () => {
         setQuantity(quantity + 1);
@@ -23,9 +26,38 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
         }
     };
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    const fetchDistance = async (id: string | undefined) => {
+        try {
+            const response = await ticketService.getDistance(id);
+            setDistance(response.distance);
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    }
+
+    useEffect(() => {
+        fetchDistance(ticket._id);
+    }, [fetchDistance, ticket._id]);
+
+    const carbonFootPrint = numberWithCommas(Number((distance * 217).toFixed(2)));
+    let donationPrice = 0;
+
+    if (donation) {
+        donationPrice = Number((distance * 0.2).toFixed(2));
+    }
+    else {
+        donationPrice = 0;
+    }
+
+    const handleDonationCarbon = async (handleDonationState: boolean) => {
+        setDonation(handleDonationState);
+    };
+
     const handleBookingTicket = async () => {
         try {
-            const response = await ticketService.bookingTickets({ option: ticketCategory, quantity: quantity }, ticket._id);
+            const response = await ticketService.bookingTickets({ option: ticketCategory, quantity: quantity, donation: donationPrice }, ticket._id);
             if (response.success) {
                 toast.success("Booking ticket successfully");
                 setConfirmBooking(true);
@@ -34,7 +66,7 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
         } catch (error) {
             toast.error("Booking ticket failed");
         }
-    }
+    };
 
     return (
         <div>
@@ -43,6 +75,7 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
                     <div className="w-full px-4">
                         <h1 className="text-4xl font-bold mb-4">{ticket.title}</h1>
                         <p className="text-lg mb-6">{ticket.description}</p>
+                        <p className="tex-lg mb-6 text-gray-500">Carbon emitted <span className="font-bold text-black">{carbonFootPrint} g.</span> on this trip.</p>
                         <div className="mb-6 flex">
                             <div className="w-full lg:w1/2">
                                 <p className="text-xl font-bold mb-2">Depart Time:</p>
@@ -71,13 +104,18 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
                                 </div>
                             </div>
                         </div>
-                        <div className="mb-6">
-                            <p className="text-xl font-bold mb-2">Prices:</p>
-                            {ticketCategory === "business" ? (
-                                <p className="text-lg">{ticket.business_price * quantity} ฿ - Business Price</p>
-                            ) : (
-                                <p className="text-lg">{ticket.standard_price * quantity} ฿ - Standard Price</p>
-                            )}
+                        <div className="mb-6 flex">
+                            <div className="w-full lg:w-1/2">
+                                <p className="text-xl font-bold mb-2">Prices:</p>
+                                {ticketCategory === "business" ? (
+                                    <p className="text-lg">{ticket.business_price * quantity} ฿ - Business Price</p>
+                                ) : (
+                                    <p className="text-lg">{ticket.standard_price * quantity} ฿ - Standard Price</p>
+                                )}
+                            </div>
+                            <div className="w-full lg:w-1/2">
+                                <CarbonDonate distance={distance} onDonatedCarbon={handleDonationCarbon} />
+                            </div>
                         </div>
                         <div className="flex justify-end">
                             <button

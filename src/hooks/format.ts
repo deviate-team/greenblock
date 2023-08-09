@@ -36,3 +36,7 @@ export function formatTimeToISOString(dateString: string): string {
 
     return now.toISOString();
 }
+
+export function numberWithCommas(numberInput: number) {
+    return numberInput.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}

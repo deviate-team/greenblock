@@ -21,7 +21,7 @@ const HistoryTable = ({ history }: { history: ITransactionItem }) => {
                     {history.user.username}
                 </td>
                 <td className="px-6 py-4">
-                    {history.total_price}
+                    {history.total_price.toFixed(2)}
                 </td>
                 <td className="px-6 py-4">
                     {history.status}
