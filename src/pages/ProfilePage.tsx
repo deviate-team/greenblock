@@ -68,11 +68,11 @@ const ProfilePage = () => {
         </li>
         <li className="flex flex-col items-center justify-between">
           <div>Carbon Credit</div>
-          <div>{user?.carbonCredit}</div>
+          <div>{user?.carbonCredit.toFixed(2)}</div>
         </li>
         <li className="flex flex-col items-center justify-around">
           <div>Retail CC</div>
-          <div>{user?.retailCC}</div>
+          <div>{user?.retailCC.toFixed(2)}</div>
         </li>
       </ul>
       <div className="p-4 border-t mx-8 mt-2 flex justify-center space-x-5 text-xs sm:text-base">

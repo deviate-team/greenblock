@@ -11,7 +11,7 @@ const AddMoneyPage = () => {
 
     const amount: number = parseInt(String(balance - (balance * 0.07)));
 
-    const fetchUser = async () => {
+    const fetchUser = async (): Promise<void> => {
         try {
             const response = await userService.getUserProfile();
             setUser(response.data);
@@ -21,7 +21,7 @@ const AddMoneyPage = () => {
         }
     }
 
-    const handleAddMoney = async () => {
+    const handleAddMoney = async (): Promise<void> => {
         try {
             if (user === null) {
                 toast.error("Please Login");
