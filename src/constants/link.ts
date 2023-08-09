@@ -13,8 +13,8 @@ export const NonAuthUserLink: ILink[] = [
         "title": 'Tickets',
     },
     {
-        "pathName": '/contract',
-        "title": 'Contract',
+        "pathName": '/contact',
+        "title": 'Contact',
     },
 ]
 
@@ -32,8 +32,8 @@ export const UserLink: ILink[] = [
         "title": 'History',
     },
     {
-        "pathName": '/contract',
-        "title": 'Contract',
+        "pathName": '/contact',
+        "title": 'Contact',
     },
 ]
 
@@ -49,16 +49,13 @@ export const ProviderLink: ILink[] = [
     {
         "pathName": '/crowdfunding',
         "title": 'Crowdfunding',
-    },{
-        "pathName": '/create-crowdfunding',
-        "title": 'Create Crowdfunding',
     },
     {
         "pathName": '/marketplace',
         "title": 'Marketplace',
     },
     {
-        "pathName": '/contract',
-        "title": 'Contract',
+        "pathName": '/contact',
+        "title": 'Contact',
     },
 ]

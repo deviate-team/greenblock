@@ -2,6 +2,7 @@ import { formatTime, formatTimestamp } from "@/hooks/format";
 import { ITicketData } from "@/interfaces/ticket";
 import { ticketService } from "@/services/ticket.services";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 type TicketDetailProps = {
     ticket: ITicketData;
@@ -16,7 +17,6 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
     const handleIncreaseQuantity = () => {
         setQuantity(quantity + 1);
     };
-
     const handleDecreaseQuantity = () => {
         if (quantity > 1) {
             setQuantity(quantity - 1);
@@ -27,15 +27,15 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
         try {
             const response = await ticketService.bookingTickets({ option: ticketCategory, quantity: quantity }, ticket._id);
             if (response.success) {
-                alert("Booking successfully");
+                toast.success("Booking ticket successfully");
                 setConfirmBooking(true);
                 onBookingComplete(true);
             }
         } catch (error) {
-            const message = (error as Error).message
-            throw new Error(message)
+            toast.error("Booking ticket failed");
         }
     }
+
     return (
         <div>
             <div className="container mx-auto px-4 py-8">
@@ -74,9 +74,9 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
                         <div className="mb-6">
                             <p className="text-xl font-bold mb-2">Prices:</p>
                             {ticketCategory === "business" ? (
-                                <p className="text-lg">{ticket.business_price} ฿ - Business Price</p>
+                                <p className="text-lg">{ticket.business_price * quantity} ฿ - Business Price</p>
                             ) : (
-                                <p className="text-lg">{ticket.standard_price} ฿ - Standard Price</p>
+                                <p className="text-lg">{ticket.standard_price * quantity} ฿ - Standard Price</p>
                             )}
                         </div>
                         <div className="flex justify-end">
@@ -91,7 +91,7 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

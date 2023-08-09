@@ -1,12 +1,12 @@
 import Feature from "@/components/Feature"
-import News from "@/components/News"
+import Blog from "@/components/Blog"
 
 
 const HomePage = () => {
     return (
         <>
             <Feature />
-            <News />
+            <Blog />
         </>
     )
 }

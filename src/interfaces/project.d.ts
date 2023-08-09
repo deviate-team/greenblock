@@ -1,7 +1,14 @@
-export interface Icontract {
+export interface IContact {
   name: string;
   email: string;
   phoneNumber: string;
+}
+
+export interface IShareHolder {
+  user: string;
+  shares: number;
+  percentage: number;
+  last_payment: string;
 }
 
 export interface IProject {
@@ -9,17 +16,16 @@ export interface IProject {
   name: string;
   description: string;
   owner: string;
-  contract: contract;
+  contract: IContact;
   start_date: string;
   end_date: string;
   image: string;
   max_shares: number;
   balance: number;
-  shares_holders: string[]; // Assuming shares_holders is an array of user IDs or names
+  shares_holders: IShareHolder[];
   createdAt: string;
   updatedAt: string;
 }
-
 
 export interface ICreateProject {
   name: string;

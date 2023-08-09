@@ -30,8 +30,8 @@ const MarketplacePage = () => {
     );
 
   return (
-    <div className="container lg:max-w-screen-xl p-4 mx-auto font-BAI">
-        <div className="relative overflow-hidden w-full max-h-96 bg-fixed mb-10">
+    <div className="container lg:max-w-screen-xl mx-auto font-BAI">
+      <div className="relative overflow-hidden min-w-screen max-h-96 bg-fixed" >
         <img
           src="/cc.jpg"
           alt="Hero Image"
@@ -39,16 +39,18 @@ const MarketplacePage = () => {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div>
       </div>
-      <h1 className="text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center ">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          Ticket
-        </span>{" "}
-        is now AVAILABLE
-      </h1>
-      <h1 className="text-2xl font-BAI font-medium text-center mb-4">
-        Marketplace
-      </h1>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="container mx-auto my-8 text-center font-IBM">
+        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center flex justify-center space-x-2">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+            Market
+          </span>
+          <div>
+            Place
+          </div>
+        </h1>
+        <p className="text-gray-500 mx-12 mt-4">Be a Climate Champion Today! Invest in Carbon Offsets, Donate for a Greener Tomorrow. Together, Let's Fight Climate Change and Protect Our Planet! </p>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-10">
         {marketplace.map((data) => (
           <Link
             to={`/marketplace/${data._id}`}

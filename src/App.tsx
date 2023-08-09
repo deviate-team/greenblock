@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
-import ContractPage from "@/pages/ContractPage";
+import ContactPage from "@/pages/ContactPage";
 import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
 import CrowdFundingDetailPage from "@/pages/CrowdFundingDetailPage";
@@ -17,6 +17,7 @@ import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
 import TicketPage from "@/pages/TicketPage";
+import AddMoneyPage from "./pages/AddMoneyPage";
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
           <Route path="/ticket" element={<TicketPage />} />
           <Route path="/marketplace" element={<MarketplacesPage />} />
           <Route path="/marketplace/:id" element={<MarketplacePage />} />
-          <Route path="/contract" element={<ContractPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/swap" element={<SwapPage />} />
           <Route path="/crowdfunding" element={<CrowdFundingPage />} />
           <Route path="/crowdfunding/:id" element={<CrowdFundingDetailPage />} />
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/history-detail/:id" element={<HistoryDetailPage />} />
           <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
+          <Route path="/add-money" element={<AddMoneyPage />} />
         </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />

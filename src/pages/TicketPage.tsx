@@ -125,7 +125,7 @@ const TicketPage = () => {
   }
 
   return (
-    <div className="container lg:max-w-screen-xl mx-auto p-4 space-y-6 font-BAI ">
+    <div className="container lg:max-w-screen-xl mx-auto space-y-6 font-BAI ">
       <div className="relative overflow-hidden w-full max-h-96 bg-fixed mb-10">
         <img
           src="/tuk-tuk.jpg"
@@ -134,18 +134,20 @@ const TicketPage = () => {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div>
       </div>
-      <h1 className="text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center ">
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-          Ticket
-        </span>{" "}
-        is now AVAILABLE
-      </h1>
-      <p className="text-xl font-BAI font-medium text-center text-gray-600">
-        Go green and support your local community by choosing eco-friendly local
+      <div className="container mx-auto my-8 text-center font-IBM">
+          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center flex justify-center space-x-2">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+              Ticket
+            </span>
+            <div>
+              is now AVAILABLE
+            </div>
+          </h1>
+          <p className="text-gray-500 mx-12 mt-4">Go green and support your local community by choosing eco-friendly local
         transportation today! Embrace emission-free electric bikes, scooters,
         and cars for a cleaner and healthier commute. Act now and be part of the
-        movement towards a more sustainable future!
-      </p>
+        movement towards a more sustainable future!</p>
+        </div>
 
       {user?.role === "provider" && (
         <div className="flex justify-center container mx-auto items-center object-center">
@@ -157,7 +159,7 @@ const TicketPage = () => {
           </button>
         </div>
       )}
-      <div className="flex justify-center">
+      <div className="flex justify-center mx-10">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {Ticket.map((ticket) => (
             <TicketCard key={ticket._id} ticket={ticket} />

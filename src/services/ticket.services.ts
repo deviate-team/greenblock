@@ -22,6 +22,15 @@ export const ticketService = {
             throw new Error(message);
         }
     },
+    async getTicketById(id: string | undefined) {
+        try {
+            const response = await axiosInstance.get(`/tickets/${id}`);
+            return response.data;
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    },
     async createTicket(data: ICreateTicket) {
         try {
             const response = await axiosInstance.post('/tickets', data);
