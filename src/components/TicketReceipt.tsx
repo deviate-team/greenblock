@@ -8,7 +8,7 @@ const TicketReceipt = ({ transaction }: { transaction: ITransactionItem }) => {
 
     const [user, setUser] = useState<IUserProfile>();
 
-    const fetchUser = async () => {
+    const fetchUser = async (): Promise<void> => {
         try {
             const { data } = await userService.getUserProfile();
             setUser(data);

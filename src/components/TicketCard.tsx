@@ -5,7 +5,7 @@ import { IUserProfile } from "@/interfaces/user"
 import { userService } from "@/services/user.services"
 import { useEffect, useState } from "react"
 import toast from "react-hot-toast"
-import { useNavigate } from "react-router-dom"
+import { NavigateFunction, useNavigate } from "react-router-dom"
 import BookingSuccess from "./BookingSuccess"
 import Payment from "./Payment"
 import TicketDetail from "./TicketDetail"
@@ -16,7 +16,7 @@ const TicketCard = ({ ticket }: { ticket: ITicketData }) => {
     const [bookingComplete, setBookingComplete] = useState<boolean>(false);
     const [ticketCategory, setTicketCategory] = useState<string>("");
     const [user, setUser] = useState<IUserProfile | null>(null);
-    const navigate = useNavigate();
+    const navigate: NavigateFunction = useNavigate();
 
     let bookingIndex = 0
 

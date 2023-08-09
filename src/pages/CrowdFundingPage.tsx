@@ -12,20 +12,19 @@ const CrowdFundingPage = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [investStep, setInvestStep] = useState<number>(1)
 
-
-  const fetchProjects = async () => {
+  const fetchProjects = async (): Promise<void> => {
     try {
       const { data } = await projectService.getProjects()
-      setProjects(data)
-      setLoading(false)
+      setProjects(data);
+      setLoading(false);
     } catch (error) {
-      const message = (error as Error).message
-      setLoading(false)
-      throw new Error(message)
+      const message = (error as Error).message;
+      setLoading(false);
+      throw new Error(message);
     }
   }
 
-  const handleSelectedInvestStep = (step: number) => {
+  const handleSelectedInvestStep = (step: number): void => {
     setInvestStep(step)
   }
 

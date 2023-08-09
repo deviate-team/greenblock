@@ -17,10 +17,10 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
     const [distance, setDistance] = useState<number>(0);
     const [donation, setDonation] = useState<boolean>(false);
 
-    const handleIncreaseQuantity = () => {
+    const handleIncreaseQuantity = (): void => {
         setQuantity(quantity + 1);
     };
-    const handleDecreaseQuantity = () => {
+    const handleDecreaseQuantity = (): void => {
         if (quantity > 1) {
             setQuantity(quantity - 1);
         }
