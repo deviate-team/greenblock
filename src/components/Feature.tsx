@@ -22,9 +22,9 @@ const Feature = () => {
             </div>
             <div className="container mx-auto p-4 my-8 text-center font-IBM">
                 <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl"><span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Green Block</span></h1>
-                <p className = "mx-12 mt-4">Welcome To GreenBlock, the best website that make your trip green !</p>
-                <p className ="text-gray-500 mx-12 mt-4">Welcome to GreenBlock - your eco-friendly transport platform revolutionizing travel with positive environmental impact. Book EVs, public transit, and bikes to reduce your carbon footprint. Earn and trade carbon credits for offsetting emissions, supporting renewable energy and reforestation. Join eco-conscious travelers creating a greener future. Empower change with GreenBlock today!</p>
-                <button onClick={() => handleNavigate('/login')}type="button" className="my-5 inline-block rounded-full px-8 py-3 font-semibold text-white bg-primary-color hover:bg-primary-700 focus:outline-none focus:ring-primary-hover-color hover:shadow-lg">
+                <p className="mx-12 mt-4">Welcome To GreenBlock, the best website that make your trip green !</p>
+                <p className="text-gray-500 mx-12 mt-4">Welcome to GreenBlock - your eco-friendly transport platform revolutionizing travel with positive environmental impact. Book EVs, public transit, and bikes to reduce your carbon footprint. Earn and trade carbon credits for offsetting emissions, supporting renewable energy and reforestation. Join eco-conscious travelers creating a greener future. Empower change with GreenBlock today!</p>
+                <button onClick={() => handleNavigate('/login')} type="button" className="my-5 inline-block rounded-full px-8 py-3 font-semibold text-white bg-primary-color hover:bg-primary-700 focus:outline-none focus:ring-primary-hover-color hover:shadow-lg">
                     Start Now
                 </button>
                 {/* <button className="w-auto text-white bg-primary-color hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-hover-color font-medium rounded-lg text-sm my-5 px-10 py-2.5 text-center">Start Now</button> */}
@@ -69,25 +69,25 @@ const Feature = () => {
                         <h3 className="my-3 text-3xl font-semibold">For Individual</h3>
                         <div className="space-y-1">
                             <li className="mb-0 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Online transportation booking
                             </li>
                             <li className="mb-4 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
-                                stroke="currentColor" className="mr-3 h-5 w-5 text-primary dark:text-primary-400">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
+                                    stroke="currentColor" className="mr-3 h-5 w-5 text-primary dark:text-primary-400">
+                                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Carbon footprint tracking
                             </li>
                             <li className="mb-4 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Green Tourist Certificate
                             </li>
                             <li className="mb-4 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary-color dark:text-primary-400">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Special discount & more
@@ -99,25 +99,25 @@ const Feature = () => {
                         <h3 className="my-3 text-3xl font-semibold">For Business</h3>
                         <div className="space-y-1 leadi">
                             <li className="mb-0 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 More customers & promotion
                             </li>
                             <li className="mb-4 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Free Carbon Credits
                             </li>
                             <li className="mb-4 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Carbon credit retails trading
                             </li>
                             <li className="mb-4 flex">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
                                     stroke="currentColor" className="mr-3 h-5 w-5 text-primary">
                                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
                                 Offering & investing on carbon project

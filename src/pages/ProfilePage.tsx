@@ -2,12 +2,9 @@ import { IUserProfile } from "@/interfaces/user";
 import { userService } from "@/services/user.services";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 
 const ProfilePage = () => {
   const [user, setUser] = useState<IUserProfile | null>(null);
-
-  const navigate = useNavigate();
 
   const fetchUser = async () => {
     try {
@@ -28,7 +25,7 @@ const ProfilePage = () => {
       await userService.logout();
       toast.success("Logout Success");
       setTimeout(() => {
-        navigate("/");
+        window.location.href = "/";
       }, 1000)
     } catch (error) {
       const message = (error as Error).message;
