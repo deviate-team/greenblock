@@ -11,7 +11,7 @@ export const transactionService = {
             throw new Error(message);
         }
     },
-    async getTransactionById(id: string) {
+    async getTransactionById(id: string | undefined) {
         try {
             const response = await axiosInstance.get(`/transactions/${id}`);
             return response.data;

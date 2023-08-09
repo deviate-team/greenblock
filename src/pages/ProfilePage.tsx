@@ -2,6 +2,7 @@ import { IUserProfile } from "@/interfaces/user";
 import { userService } from "@/services/user.services";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const ProfilePage = () => {
   const [user, setUser] = useState<IUserProfile | null>(null);
@@ -32,7 +33,6 @@ const ProfilePage = () => {
       throw new Error(message);
     }
   }
-
 
   return (
     <div
@@ -75,7 +75,10 @@ const ProfilePage = () => {
           <div>{user?.retailCC}</div>
         </li>
       </ul>
-      <div className="p-4 border-t mx-8 mt-2">
+      <div className="p-4 border-t mx-8 mt-2 flex justify-center space-x-5 text-xs sm:text-base">
+        <button className="w-1/2 block mx-auto rounded-full bg-primary-color hover:shadow-lg font-semibold text-gray-50 px-6 py-2">
+          <Link to="/add-money">Add Money</Link>
+        </button>
         <button onClick={() => handleSignOut()} className="w-1/2 block mx-auto rounded-full bg-primary-color hover:shadow-lg font-semibold text-gray-50 px-6 py-2">Signout</button>
       </div>
     </div>

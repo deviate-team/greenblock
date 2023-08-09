@@ -21,6 +21,7 @@ const CreateTicketPage = () => {
         lagitude: 0,
         longitude: 0,
     });
+    
     const [arrive_location, setArriveLocation] = useState<ILocationData>({
         lagitude: 0,
         longitude: 0,

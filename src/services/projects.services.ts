@@ -20,7 +20,7 @@ export const projectService = {
       throw new Error(message);
     }
   },
-  async getProject(id: string) {
+  async getProject(id: string | undefined) {
     try {
       const response = await axiosInstance.get(`/projects/${id}`);
       return response.data;

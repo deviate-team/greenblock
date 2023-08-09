@@ -5,8 +5,7 @@ import { InvestStepConstants } from "@/constants/step"
 import { IProject } from "@/interfaces/project"
 import { projectService } from "@/services/projects.services"
 import { useEffect, useState } from "react"
-import { Stepper, initTE } from "tw-elements"
-initTE({ Stepper })
+import { Link } from "react-router-dom"
 
 const CrowdFundingPage = () => {
   const [projects, setProjects] = useState<IProject[]>([])
@@ -39,14 +38,13 @@ const CrowdFundingPage = () => {
   return (
     <div className="container lg:max-w-screen-xl mx-auto space-y-6 font-BAI">
       <section>
-        <div className="relative overflow-hidden w-screen max-h-96 bg-fixed" >
+        <div className="relative overflow-hidden min-w-screen max-h-96 bg-fixed">
           <img
             src="/green_coin.jpg"
             alt="Hero Image"
             className="w-full h-full bg-opacity-5"
           />
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div>
-
         </div>
         <div className="container mx-auto my-8 text-center font-IBM">
           <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center flex justify-center space-x-2">
@@ -62,18 +60,24 @@ const CrowdFundingPage = () => {
             and attract funding to earn valuable carbon credits for sale. Join now
             and make a real impact in the fight against climate change!</p>
         </div>
+        <div className="flex justify-center">
+          <Link to="/create-crowdfunding">
+            <button className="text-white bg-primary-color rounded-md px-4 py-2 hover:bg-primary-hover-color">
+              Create Project
+            </button>
+          </Link>
+        </div>
 
-        <h3 className="text-2xl font-BAI font-medium text-center text-primary-color mt-10 mx-20">
+        <h3 className="text-4xl font-BAI font-medium text-center text-primary-color mt-10 mx-20">
           How to invest
           <InvestStep selectInvestmentState={handleSelectedInvestStep} />
 
-          <div className="mt-10">
+          <div className="mt-10 text-2xl">
             {investStep === 1 && InvestStepConstants[0]}
             {investStep === 2 && InvestStepConstants[1]}
             {investStep !== 1 && investStep !== 2 && InvestStepConstants[2]}
           </div>
         </h3>
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-20 mx-10">
           {projects.map((data) => (
             <CrowdFundingCard key={data._id} project={data} />
