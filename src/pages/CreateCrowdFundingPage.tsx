@@ -20,6 +20,7 @@ const CreateCrowdFundingPage = () => {
       email: "",
       phoneNumber: "",
     },
+    estimated_outcome: 0,
   });
 
   const handleChangeDateValue = (newDateValue: DateValueType) => {
@@ -53,6 +54,7 @@ const CreateCrowdFundingPage = () => {
           email: "",
           phoneNumber: "",
         },
+        estimated_outcome: 0,
       });
 
       setDateValue({
@@ -166,9 +168,27 @@ const CreateCrowdFundingPage = () => {
                 required
               />
             </div>
+            <div>
+              <label className="">
+                Estimated Outcome in retail(s)CC
+              </label>
+              <input
+                type="number"
+                id="estimatedOutcome"
+                className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
+                value={project.estimated_outcome}
+                onChange={(e) =>
+                  setProject({
+                    ...project,
+                    estimated_outcome: e.target.valueAsNumber,
+                  })
+                }
+                required
+              />
+            </div>
             <div className="">
               <label className="block font-medium text-gray-700">
-                contact Email
+                Contact Email
               </label>
               <input
                 type="text"

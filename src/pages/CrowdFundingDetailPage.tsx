@@ -24,10 +24,10 @@ const CrowdFundingDetailPage = () => {
   const handleBuy = async (): Promise<void> => {
     const response = await projectService.joinProject(id as string, offerValue);
     if (response.status === 200) {
-      toast.success("Buy project successfully");
+      toast.success("join project successfully");
     }
     else {
-      toast.error("Buy project failed");
+      toast.error("make sure you have enough balance");
     }
     await fetchProject(id);
   };
@@ -101,26 +101,19 @@ const CrowdFundingDetailPage = () => {
                 />
               </svg>
               <p>
-                Share : <span>{project?.max_shares}</span>
+                Balance : <span>{project?.balance} / {project?.max_shares}</span>
               </p>
             </div>
-            <div className="flex items-center space-x-2">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="none"
-                  stroke="#064420"
-                  strokeWidth="2"
-                  d="M16 16c0-1.105-3.134-2-7-2s-7 .895-7 2s3.134 2 7 2s7-.895 7-2ZM2 16v4.937C2 22.077 5.134 23 9 23s7-.924 7-2.063V16M9 5c-4.418 0-8 .895-8 2s3.582 2 8 2M1 7v5c0 1.013 3.582 2 8 2M23 4c0-1.105-3.1-2-6.923-2c-3.824 0-6.923.895-6.923 2s3.1 2 6.923 2S23 5.105 23 4Zm-7 12c3.824 0 7-.987 7-2V4M9.154 4v10.166M9 9c0 1.013 3.253 2 7.077 2C19.9 11 23 10.013 23 9"
-                />
-              </svg>
-              <p>
-                Balance : <span>{project?.balance}</span>
-              </p>
+            <div>
+              <p className="text-lg font-medium mb-2">Estimated outcome</p>
+              <div className="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="#064420" className="w-6 h-6">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
+                </svg>
+                <p>
+                  <span>{project?.estimated_outcome} Retail(s)CC</span>
+                </p>
+              </div>
             </div>
             <div>
               <p className="text-lg font-medium mb-2">contact</p>
@@ -195,7 +188,10 @@ const CrowdFundingDetailPage = () => {
               >
                 <img src="/minus_icon.svg" alt="" className="w-4" />
               </button>
-              <p className="text-3xl font-medium">{offerValue}</p>
+              <input type="number" value={offerValue}
+                className="w-32 text-center border border-gray-300 text-lg font-medium rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-primary-color focus:border-transparent appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                onChange={(e) => setOfferValue(parseInt(e.target.value))}
+              />
               <button
                 onClick={handleIncrease}
                 className=" p-1 rounded-full bg-white shadow-md"

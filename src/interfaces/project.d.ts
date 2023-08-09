@@ -23,6 +23,7 @@ export interface IProject {
   max_shares: number;
   balance: number;
   shares_holders: IShareHolder[];
+  estimated_outcome: number;
   createdAt: string;
   updatedAt: string;
 }
@@ -35,6 +36,7 @@ export interface ICreateProject {
     email: string;
     phoneNumber: string;
   };
+  estimated_outcome: number;
   start_date: string;
   end_date: string;
   image: string;

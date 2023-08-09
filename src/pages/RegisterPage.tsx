@@ -137,12 +137,12 @@ const RegisterPage = () => {
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" /></svg>
                                 </button>
                                 <div className={`z-10 ${!dropdownOpen && 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
-                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                                    <ul className="text-sm text-gray-700 dark:text-gray-200">
                                         <li>
-                                            <button onClick={() => handleDropdownItemClick('user')} className="block w-full text-left px-4 py-2 hover:bg-gray-100">User</button>
+                                            <button onClick={() => handleDropdownItemClick('user')} className="block w-full text-left text-green-700 px-4 py-2 hover:bg-green-100">User</button>
                                         </li>
                                         <li>
-                                            <button onClick={() => handleDropdownItemClick('provider')} className="block w-full text-left px-4 py-2 hover:bg-gray-100">Provider</button>
+                                            <button onClick={() => handleDropdownItemClick('provider')} className="block w-full text-left px-4 py-2  text-green-700 hover:bg-green-100">Provider</button>
                                         </li>
                                     </ul>
                                 </div>
