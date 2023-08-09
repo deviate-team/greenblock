@@ -16,7 +16,7 @@ export interface IProject {
   name: string;
   description: string;
   owner: string;
-  contract: IContact;
+  contact: IContact;
   start_date: string;
   end_date: string;
   image: string;
@@ -30,7 +30,7 @@ export interface IProject {
 export interface ICreateProject {
   name: string;
   description: string;
-  contract: {
+  contact: {
     name: string;
     email: string;
     phoneNumber: string;

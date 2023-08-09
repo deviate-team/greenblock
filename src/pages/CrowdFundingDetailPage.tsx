@@ -65,7 +65,7 @@ const CrowdFundingDetailPage = () => {
           </div>
           <div className="space-y-4 mt-6 px-2 md:px-6 lg:px-8">
             <h1 className="text-4xl">{project?.name}</h1>
-            <p className="text-lg font-medium">By {project?.contract.name}</p>
+            <p className="text-lg font-medium">By {project?.contact.name}</p>
             <div className="flex items-center space-x-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +123,7 @@ const CrowdFundingDetailPage = () => {
               </p>
             </div>
             <div>
-              <p className="text-lg font-medium mb-2">contract</p>
+              <p className="text-lg font-medium mb-2">contact</p>
               <div className="space-y-2">
                 <div className="flex items-center space-x-2">
                   <svg
@@ -143,7 +143,7 @@ const CrowdFundingDetailPage = () => {
                     </g>
                   </svg>
                   <p>
-                    Name : <span>{project?.contract.name}</span>
+                    Name : <span>{project?.contact.name}</span>
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -160,7 +160,7 @@ const CrowdFundingDetailPage = () => {
                     />
                   </svg>
                   <p>
-                    Email : <span>{project?.contract.email}</span>
+                    Email : <span>{project?.contact.email}</span>
                   </p>
                 </div>
                 <div className="flex items-center space-x-2">
@@ -177,7 +177,7 @@ const CrowdFundingDetailPage = () => {
                     />
                   </svg>
                   <p>
-                    phoneNumber : <span>{project?.contract.phoneNumber}</span>
+                    phoneNumber : <span>{project?.contact.phoneNumber}</span>
                   </p>
                 </div>
               </div>
