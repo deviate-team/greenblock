@@ -17,6 +17,7 @@ import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
 import TicketPage from "@/pages/TicketPage";
+import AddMoneyPage from "./pages/AddMoneyPage";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
           <Route path="/history-detail/:id" element={<HistoryDetailPage />} />
           <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
+          <Route path="/add-money" element={<AddMoneyPage />} />
         </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />
