@@ -1,11 +1,11 @@
-export const formatTime = (time: string) => {
+export const formatTime = (time: string): string => {
     const date = new Date(time);
     const hours = String(date.getHours()).padStart(2, "0");
     const minutes = String(date.getMinutes()).padStart(2, "0");
     return `${hours}:${minutes}`;
 };
 
-export const formatDate = (time: string) => {
+export const formatDate = (time: string): string => {
     const date = new Date(time);
     const year = date.getFullYear();
     const month = String(date.getMonth() + 1).padStart(2, "0");
@@ -35,4 +35,8 @@ export function formatTimeToISOString(dateString: string): string {
     now.setUTCMilliseconds(0);
 
     return now.toISOString();
+}
+
+export function numberWithCommas(numberInput: number): string {
+    return numberInput.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

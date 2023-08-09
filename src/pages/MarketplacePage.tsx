@@ -2,9 +2,11 @@ import Loading from "@/components/Loading";
 import { IOffer } from "@/interfaces/offer";
 import { offerService } from "@/services/offer.services";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { useParams } from "react-router-dom";
 
 const MarketplacePage = () => {
+  const [offerValue, setOfferValue] = useState<number>(10);
   const [marketplace, setMarketplace] = useState<IOffer>();
   const [loading, setLoading] = useState<boolean>(true);
   const { id } = useParams<{ id: string }>();
@@ -20,6 +22,25 @@ const MarketplacePage = () => {
       setLoading(false);
       throw new Error(message);
     }
+  };
+
+  const handleBuyOffers = async (): Promise<void> => {
+    try {
+      await offerService.buyOffers(id as string, offerValue);
+      toast.success("Buy offers successfully");
+      await fetchMarketplace();
+    } catch (error) {
+      toast.error("Buy offers failed");
+    }
+  }
+
+  const handleIncrease = (): void => {
+    setOfferValue(offerValue + 1);
+  };
+
+  const handleDecrease = (): void => {
+    if (offerValue === 0) return;
+    setOfferValue(offerValue - 1);
   };
 
   useEffect(() => {
@@ -111,6 +132,29 @@ const MarketplacePage = () => {
             <div>
               <p className="font-medium text-lg">Description</p>
               <p className="mt-2">{marketplace?.description}</p>
+            </div>
+            <div className="text-center mt-8 space-y-4">
+              <div className="flex gap-8 justify-center items-center">
+                <button
+                  onClick={handleDecrease}
+                  className=" p-1 rounded-full bg-white shadow-md"
+                >
+                  <img src="/minus_icon.svg" alt="" className="w-4" />
+                </button>
+                <p className="text-3xl font-medium">{offerValue}</p>
+                <button
+                  onClick={handleIncrease}
+                  className=" p-1 rounded-full bg-white shadow-md"
+                >
+                  <img src="/plus_icon.svg" alt="" className="w-4" />
+                </button>
+              </div>
+              <button
+                onClick={handleBuyOffers}
+                className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
+              >
+                Buy Offers
+              </button>
             </div>
           </div>
         </div>

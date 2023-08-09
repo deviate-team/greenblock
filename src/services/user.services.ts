@@ -44,5 +44,17 @@ export const userService = {
             const message = (error as Error).message;
             throw new Error(message);
         }
-    }
+    },
+    async addMoney(quantity: number, option: string, id: string | undefined) {
+        try {
+            const response = await axiosInstance.patch(`/users/${id}/add-money`, {
+                quantity,
+                option
+            });
+            return response.data;
+        } catch (error) {
+            const message = (error as Error).message;
+            throw new Error(message);
+        }
+    },
 }

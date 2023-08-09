@@ -1,10 +1,7 @@
-
 import { useNavigate } from "react-router-dom";
-
 
 const Feature = () => {
     const navigate = useNavigate();
-
 
     const handleNavigate = (path: string): void => {
         navigate(path);
@@ -27,7 +24,6 @@ const Feature = () => {
                 <button onClick={() => handleNavigate('/login')} type="button" className="my-5 inline-block rounded-full px-8 py-3 font-semibold text-white bg-primary-color hover:bg-primary-700 focus:outline-none focus:ring-primary-hover-color hover:shadow-lg">
                     Start Now
                 </button>
-                {/* <button className="w-auto text-white bg-primary-color hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-hover-color font-medium rounded-lg text-sm my-5 px-10 py-2.5 text-center">Start Now</button> */}
             </div>
 
             <div className="container  mx-auto md:px-6">

@@ -49,9 +49,6 @@ export const ProviderLink: ILink[] = [
     {
         "pathName": '/crowdfunding',
         "title": 'Crowdfunding',
-    },{
-        "pathName": '/create-crowdfunding',
-        "title": 'Create Crowdfunding',
     },
     {
         "pathName": '/marketplace',

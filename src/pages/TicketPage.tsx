@@ -16,9 +16,9 @@ const TicketPage = () => {
 
   const fetchTicketList = async (page: number): Promise<void> => {
     try {
-      const response = await ticketService.getTicketList(page.toString())
-      setTicket(response.data.tickets)
-      setLimitPage(response.data.totalPages)
+      const response = await ticketService.getTicketList(page.toString());
+      setTicket(response.data.tickets);
+      setLimitPage(response.data.totalPages);
     } catch (error) {
       const message = (error as Error).message
       throw new Error(message)
@@ -27,19 +27,19 @@ const TicketPage = () => {
 
   const fetchUser = async (): Promise<void> => {
     try {
-      const response = await userService.getUserProfile()
-      setUser(response.data)
+      const response = await userService.getUserProfile();
+      setUser(response.data);
     } catch (error) {
       const message = (error as Error).message
       throw new Error(message)
     }
   }
 
-  const nextPage = () => {
+  const nextPage = (): void => {
     setCurrentPage(currentPage + 1)
   }
 
-  const prevPage = () => {
+  const prevPage = (): void => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1)
     }
@@ -135,19 +135,19 @@ const TicketPage = () => {
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-10"></div>
       </div>
       <div className="container mx-auto my-8 text-center font-IBM">
-          <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center flex justify-center space-x-2">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-              Ticket
-            </span>
-            <div>
-              is now AVAILABLE
-            </div>
-          </h1>
-          <p className="text-gray-500 mx-12 mt-4">Go green and support your local community by choosing eco-friendly local
-        transportation today! Embrace emission-free electric bikes, scooters,
-        and cars for a cleaner and healthier commute. Act now and be part of the
-        movement towards a more sustainable future!</p>
-        </div>
+        <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl text-center flex justify-center space-x-2">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+            Ticket
+          </span>
+          <div>
+            is now AVAILABLE
+          </div>
+        </h1>
+        <p className="text-gray-500 mx-12 mt-4">Go green and support your local community by choosing eco-friendly local
+          transportation today! Embrace emission-free electric bikes, scooters,
+          and cars for a cleaner and healthier commute. Act now and be part of the
+          movement towards a more sustainable future!</p>
+      </div>
 
       {user?.role === "provider" && (
         <div className="flex justify-center container mx-auto items-center object-center">
@@ -176,4 +176,4 @@ const TicketPage = () => {
   )
 }
 
-export default TicketPage
+export default TicketPage;
