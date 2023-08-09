@@ -8,6 +8,7 @@ export interface IRegisterForm {
     phoneNumber: string;
     lastName: string;
     birthDate: string;
+    role: string;
 }
 
 export interface ILoginForm {

@@ -1,6 +1,8 @@
+import { RegisterData } from "@/constants/form";
 import { IRegisterForm } from "@/interfaces/form";
 import { userService } from "@/services/user.services";
 import { useState } from "react";
+import toast from "react-hot-toast";
 import Datepicker, { DateValueType } from "react-tailwindcss-datepicker";
 
 const RegisterPage = () => {
@@ -8,10 +10,9 @@ const RegisterPage = () => {
         startDate: null,
         endDate: null,
     });
-
-    const [user, setUser] = useState<IRegisterForm>({
-        email: '', firstName: '', middleName: '', lastName: '', birthDate: '', username: '', phoneNumber: '', password: '', confirmPassword: ''
-    });
+    const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
+    const [user, setUser] = useState<IRegisterForm>(RegisterData);
+    const [role, setRole] = useState<string>('');
 
     const handleValueChange = (value: DateValueType): void => {
         setValue(value);
@@ -19,11 +20,27 @@ const RegisterPage = () => {
         setUser({ ...user, birthDate: birthDateValue });
     }
 
+    const handleDropdownChange = (): void => {
+        setDropdownOpen(!dropdownOpen);
+    }
+
+    const handleDropdownItemClick = (value: string): void => {
+        setRole(value);
+        setUser({ ...user, role: value });
+        setDropdownOpen(false);
+    }
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
         event.preventDefault();
-
-        await userService.register(user.email,user.firstName, user.middleName, user.lastName, new Date(user.birthDate).toISOString(), user.phoneNumber, user.username, user.password, user.confirmPassword)
-        window.location.href = '/';
+        try {
+            await userService.register({ ...user })
+            toast.success("Register Success");
+            setTimeout(() => {
+                window.location.href = "/";
+            }, 1000)
+        } catch (error) {
+            toast.error((error as Error).message);
+        }
     }
 
     return (
@@ -34,7 +51,7 @@ const RegisterPage = () => {
                         Sign up for your account
                     </h1>
                     <form className="space-y-4 md:space-y-6" onSubmit={handleSubmit}>
-                        <div className="flex flex-wrap -mx-3 mb-2">
+                        <div className="flex flex-wrap -mx-3 mb-2 z-0">
                             <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                                 <label className="block mb-2 text-sm font-medium text-gray-900">First Name</label>
                                 <input type="text" className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-color focus:border-primary-color block w-full p-2"
@@ -102,16 +119,34 @@ const RegisterPage = () => {
                                 />
                             </div>
                         </div>
-                        <div className="w-full mb-6 md:mb-0">
-                            <label className="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
-                            <input type="text" placeholder="09X-XXX-XXX" className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-color focus:border-primary-color block w-full p-2.5"
-                                value={user.phoneNumber}
-                                onChange={(e) => {
-                                    setUser({ ...user, phoneNumber: e.target.value });
-                                    e.preventDefault();
-                                }}
-                                required
-                            />
+                        <div className="flex flex-wrap -mx-3 mb-6">
+                            <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                                <label className="block mb-2 text-sm font-medium text-gray-900">Phone Number</label>
+                                <input type="text" placeholder="09X-XXX-XXX" className="border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-color focus:border-primary-color block w-full p-2.5"
+                                    value={user.phoneNumber}
+                                    onChange={(e) => {
+                                        setUser({ ...user, phoneNumber: e.target.value });
+                                        e.preventDefault();
+                                    }}
+                                    required
+                                />
+                            </div>
+                            <div className="w-full md:w-1/2 px-3">
+                                <label className="block mb-2 text-sm font-medium text-gray-900">Role</label>
+                                <button onClick={() => handleDropdownChange()} className="text-white bg-primary-color hover:bg-primary-hover-color font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center" type="button">{role === '' ? 'Selected Role' : role} <svg className="w-2.5 h-2.5 ml-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" /></svg>
+                                </button>
+                                <div className={`z-10 ${!dropdownOpen && 'hidden'} bg-white divide-y divide-gray-100 rounded-lg shadow w-44`}>
+                                    <ul className="py-2 text-sm text-gray-700 dark:text-gray-200">
+                                        <li>
+                                            <button onClick={() => handleDropdownItemClick('user')} className="block w-full text-left px-4 py-2 hover:bg-gray-100">User</button>
+                                        </li>
+                                        <li>
+                                            <button onClick={() => handleDropdownItemClick('provider')} className="block w-full text-left px-4 py-2 hover:bg-gray-100">Provider</button>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                         <div className="flex flex-wrap -mx-3 mb-6">
                             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
