@@ -112,10 +112,14 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
                         <div className="mb-6 flex">
                             <div className="w-full lg:w-1/2">
                                 <p className="text-xl font-bold mb-2">Prices:</p>
-                                {ticketCategory === "business" ? (
+                                {ticketCategory === "business" && donation ? (
+                                    <p className="text-lg">{(ticket.business_price * quantity) + (Number((distance * 0.2).toFixed(2)))} ฿ - Business Price</p>
+                                ) : ticketCategory === "business" && !donation ? (
                                     <p className="text-lg">{ticket.business_price * quantity} ฿ - Business Price</p>
+                                ) : ticketCategory === "standard" && donation ? (
+                                    <p className="text-lg">{(ticket.standard_price * quantity) + (Number((distance * 0.2).toFixed(2)))} ฿ - Standard Price</p>
                                 ) : (
-                                    <p className="text-lg">{ticket.standard_price * quantity} ฿ - Standard Price</p>
+                                    <p className="text-lg">{(ticket.standard_price * quantity)} ฿ - Standard Price</p>
                                 )}
                             </div>
                             <div className="w-full lg:w-1/2">
