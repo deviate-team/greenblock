@@ -4,7 +4,7 @@ interface ProgressBarProps {
 }
 
 const ProgressBar = ({ maximumValue, currentAmount }: ProgressBarProps) => {
-  const percentage = Math.round((currentAmount / maximumValue) * 100);
+  const percentage: number = Math.round((currentAmount / maximumValue) * 100);
 
   const progressBarStyle: React.CSSProperties = {
     width: `${percentage}%`,

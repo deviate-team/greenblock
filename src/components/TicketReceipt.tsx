@@ -8,7 +8,7 @@ const TicketReceipt = ({ transaction }: { transaction: ITransactionItem }) => {
 
     const [user, setUser] = useState<IUserProfile>();
 
-    const fetchUser = async () => {
+    const fetchUser = async (): Promise<void> => {
         try {
             const { data } = await userService.getUserProfile();
             setUser(data);
@@ -110,13 +110,12 @@ const TicketReceipt = ({ transaction }: { transaction: ITransactionItem }) => {
                                     </div>
                                     <div className="flex flex-col">
                                         <span className="">Price</span>
-                                        <div className="font-semibold">{transaction.total_price} ฿</div>
+                                        <div className="font-semibold">{transaction.total_price.toFixed(2)} ฿</div>
 
                                     </div>
                                 </div>
                                 <div className="flex flex-col py-5  justify-center text-sm ">
-                                    <h6 className="font-bold text-center">Boarding Pass</h6>
-
+                                    <h6 className="font-bold text-center">Scan your ticket</h6>
                                     <div className="barcode h-14 w-0 inline-block mt-4 relative left-auto"></div>
                                 </div>
                             </div>

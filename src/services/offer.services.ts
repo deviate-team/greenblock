@@ -28,5 +28,16 @@ export const offerService = {
       const message = (error as Error).message;
       throw new Error(message);
     }
+  },
+  async buyOffers(id: string, amount: number) {
+    try {
+      const response = await axiosInstance.patch(`/offers/${id}/buy`, {
+        amount
+      });
+      return response.data;
+    } catch (error) {
+      const message = (error as Error).message;
+      throw new Error(message);
+    }
   }
 }

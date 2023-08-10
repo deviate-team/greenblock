@@ -27,4 +27,4 @@ const HistoryDetailPage = () => {
     )
 }
 
-export default HistoryDetailPage
+export default HistoryDetailPage;

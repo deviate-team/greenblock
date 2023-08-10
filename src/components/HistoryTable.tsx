@@ -1,9 +1,9 @@
 import { ITransactionItem } from "@/interfaces/transaction"
-import { useNavigate } from "react-router-dom"
+import { NavigateFunction, useNavigate } from "react-router-dom"
 
 const HistoryTable = ({ history }: { history: ITransactionItem }) => {
 
-    const navigate = useNavigate()
+    const navigate: NavigateFunction = useNavigate()
 
     const handleViewDetail = () => {
         navigate(`/history-detail/${history._id}`)
@@ -21,7 +21,7 @@ const HistoryTable = ({ history }: { history: ITransactionItem }) => {
                     {history.user.username}
                 </td>
                 <td className="px-6 py-4">
-                    {history.total_price}
+                    {history.total_price.toFixed(2)}
                 </td>
                 <td className="px-6 py-4">
                     {history.status}

@@ -64,4 +64,5 @@ export interface ICreateTicket {
 export interface IBookingTicket {
     quantity: number;
     option: string;
+    donation: number;
 }
