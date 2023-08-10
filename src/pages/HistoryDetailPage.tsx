@@ -16,6 +16,7 @@ const HistoryDetailPage = () => {
     useEffect(() => {
         fetchTransactionById(transactionId)
     }, [transactionId]);
+
     return (
         <div>
             {transaction ? (
