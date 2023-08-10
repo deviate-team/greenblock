@@ -15,11 +15,12 @@ const CreateCrowdFundingPage = () => {
     start_date: "",
     end_date: "",
     max_shares: 0,
-    contract: {
+    contact: {
       name: "",
       email: "",
       phoneNumber: "",
     },
+    estimated_outcome: 0,
   });
 
   const handleChangeDateValue = (newDateValue: DateValueType) => {
@@ -48,11 +49,12 @@ const CreateCrowdFundingPage = () => {
         start_date: "",
         end_date: "",
         max_shares: 0,
-        contract: {
+        contact: {
           name: "",
           email: "",
           phoneNumber: "",
         },
+        estimated_outcome: 0,
       });
 
       setDateValue({
@@ -149,18 +151,36 @@ const CreateCrowdFundingPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
             <div className="">
               <label className="block font-medium text-gray-700">
-                Contract Name
+                Contact Name
               </label>
               <input
                 type="text"
-                id="contractName"
-                placeholder="Contract Name"
+                id="contacttName"
+                placeholder="contact Name"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={project.contract.name}
+                value={project.contact.name}
                 onChange={(e) =>
                   setProject({
                     ...project,
-                    contract: { ...project.contract, name: e.target.value },
+                    contact: { ...project.contact, name: e.target.value },
+                  })
+                }
+                required
+              />
+            </div>
+            <div>
+              <label className="">
+                Estimated Outcome in retail(s)CC
+              </label>
+              <input
+                type="number"
+                id="estimatedOutcome"
+                className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
+                value={project.estimated_outcome}
+                onChange={(e) =>
+                  setProject({
+                    ...project,
+                    estimated_outcome: e.target.valueAsNumber,
                   })
                 }
                 required
@@ -168,18 +188,18 @@ const CreateCrowdFundingPage = () => {
             </div>
             <div className="">
               <label className="block font-medium text-gray-700">
-                Contract Email
+                Contact Email
               </label>
               <input
                 type="text"
-                id="contractEmail"
-                placeholder="Contract Email"
+                id="contactEmail"
+                placeholder="contact Email"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={project.contract.email}
+                value={project.contact.email}
                 onChange={(e) =>
                   setProject({
                     ...project,
-                    contract: { ...project.contract, email: e.target.value },
+                    contact: { ...project.contact, email: e.target.value },
                   })
                 }
                 required
@@ -187,18 +207,18 @@ const CreateCrowdFundingPage = () => {
             </div>
             <div className="mb-4">
               <label className="block font-medium text-gray-700">
-                Contract Phone
+                Contact Phone
               </label>
               <input
                 type="text"
-                id="contractPhone"
-                placeholder="Contract Phone"
+                id="contactPhone"
+                placeholder="contact Phone"
                 className="w-full px-4 py-2 mt-2 border rounded-lg focus:outline-none focus:border-green-500"
-                value={project.contract.phoneNumber}
+                value={project.contact.phoneNumber}
                 onChange={(e) =>
                   setProject({
                     ...project,
-                    contract: { ...project.contract, phoneNumber: e.target.value },
+                    contact: { ...project.contact, phoneNumber: e.target.value },
                   })
                 }
                 required

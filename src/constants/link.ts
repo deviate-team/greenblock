@@ -30,11 +30,7 @@ export const UserLink: ILink[] = [
     {
         "pathName": '/history',
         "title": 'History',
-    },
-    {
-        "pathName": '/contact',
-        "title": 'Contact',
-    },
+    }
 ]
 
 export const ProviderLink: ILink[] = [
@@ -55,7 +51,7 @@ export const ProviderLink: ILink[] = [
         "title": 'Marketplace',
     },
     {
-        "pathName": '/contact',
-        "title": 'Contact',
-    },
+        "pathName": '/history',
+        "title": 'History',
+    }
 ]

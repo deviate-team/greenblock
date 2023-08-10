@@ -3,19 +3,19 @@ import TicketReceipt from "@/components/TicketReceipt";
 import { ITransactionItem } from "@/interfaces/transaction";
 import { transactionService } from "@/services/transaction.services";
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const HistoryDetailPage = () => {
     const [transaction, setTransaction] = useState<ITransactionItem>()
-
-    const fetchTransactionById = async () => {
-        const transactionId = window.location.pathname.split("/")[2]
-        const transactionById = await transactionService.getTransactionById(transactionId)
+    const { transactionId } = useParams<{ transactionId: string }>()
+    const fetchTransactionById = async (id: string | undefined) => {
+        const transactionById = await transactionService.getTransactionById(id)
         setTransaction(transactionById.data)
     }
 
     useEffect(() => {
-        fetchTransactionById()
-    }, []);
+        fetchTransactionById(transactionId)
+    }, [transactionId]);
     return (
         <div>
             {transaction ? (
