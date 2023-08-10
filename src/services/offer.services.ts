@@ -33,7 +33,6 @@ export const offerService = {
     try {
       const response = await axiosInstance.patch(`/offers/${id}/buy`, {
         amount,
-        id
       });
       return response.data;
     } catch (error) {
