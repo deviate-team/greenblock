@@ -38,7 +38,7 @@ const CreateCrowdFundingPage = () => {
     });
   };
 
-  const handleCreateOffer = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleCreateProject = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
       e.preventDefault();
       await projectService.createProject(project);
@@ -73,7 +73,7 @@ const CreateCrowdFundingPage = () => {
         <h1 className="text-center text-3xl font-medium mb-6">
           Create Project
         </h1>
-        <form onSubmit={handleCreateOffer}>
+        <form onSubmit={handleCreateProject}>
           <div className="mb-4">
             <label className="block font-medium text-gray-700">
               Project name
