@@ -12,7 +12,7 @@ export const Team: ITeam[] = [
     {
         id: 1,
         name: 'Rachata Kithatthaporn',
-        position: 'Researcher',
+        position: 'Researcher, Project Manager, Frontend Developer, Business Analyst',
         facebook_link: 'https://www.facebook.com/rachata.kithatthaporn.9',
         instagram_link: 'https://www.instagram.com/mme.nuu/',
         github_link: 'https://github.com/mmenuu',
