@@ -11,7 +11,7 @@ export const offerService = {
       throw new Error(message);
     }
   },
-  async getOffer(id: string) {
+  async getOffer(id: string | undefined) {
     try {
       const response = await axiosInstance.get(`/offers/${id}`);
       return response.data;

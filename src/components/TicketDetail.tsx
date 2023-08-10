@@ -14,7 +14,7 @@ type TicketDetailProps = {
 const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetailProps) => {
     const [quantity, setQuantity] = useState<number>(1);
     const [confirmBooking, setConfirmBooking] = useState<boolean>(false);
-    const [distance, setDistance] = useState<number>(0);
+    const [distance, setDistance] = useState<number>(1);
     const [donation, setDonation] = useState<boolean>(false);
 
     const handleIncreaseQuantity = (): void => {
@@ -30,7 +30,12 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
     const fetchDistance = async (id: string | undefined) => {
         try {
             const response = await ticketService.getDistance(id);
-            setDistance(response.distance);
+            if (response.distance === null) {
+                setDistance(1);
+            } else {
+                setDistance(response.distance);
+            }
+
         } catch (error) {
             const message = (error as Error).message;
             throw new Error(message);
@@ -75,7 +80,7 @@ const TicketDetail = ({ ticket, ticketCategory, onBookingComplete }: TicketDetai
                     <div className="w-full px-4">
                         <h1 className="text-4xl font-bold mb-4">{ticket.title}</h1>
                         <p className="text-lg mb-6">{ticket.description}</p>
-                        <p className="tex-lg mb-6 text-gray-500">Carbon emitted <span className="font-bold text-black">{carbonFootPrint} g.</span> on this trip.</p>
+                        <p className="tex-lg mb-6 text-gray-500">Carbon emitted <span className="font-bold text-black">{carbonFootPrint} gCO2.</span> on this trip.</p>
                         <div className="mb-6 flex">
                             <div className="w-full lg:w1/2">
                                 <p className="text-xl font-bold mb-2">Depart Time:</p>

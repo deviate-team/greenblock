@@ -3,18 +3,16 @@ import { IOffer } from "@/interfaces/offer";
 import { offerService } from "@/services/offer.services";
 import { useEffect, useState } from "react";
 import toast from "react-hot-toast";
-import { useParams } from "react-router-dom";
 
 const MarketplacePage = () => {
   const [offerValue, setOfferValue] = useState<number>(10);
   const [marketplace, setMarketplace] = useState<IOffer>();
   const [loading, setLoading] = useState<boolean>(true);
-  const { id } = useParams<{ id: string }>();
+  const id = window.location.pathname.split("/")[2]
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const fetchMarketplace = async () => {
+  const fetchMarketplace = async (id: string | undefined, setMarketplace: (marketplace: IOffer) => void, setLoading: (loading: boolean) => void) => {
     try {
-      const response = await offerService.getOffer(id as string);
+      const response = await offerService.getOffer(id);
       setMarketplace(response);
       setLoading(false);
     } catch (error) {
@@ -24,11 +22,11 @@ const MarketplacePage = () => {
     }
   };
 
-  const handleBuyOffers = async (): Promise<void> => {
+  const handleBuyOffers = async (id: string | undefined): Promise<void> => {
     try {
       await offerService.buyOffers(id as string, offerValue);
       toast.success("Buy offers successfully");
-      await fetchMarketplace();
+      await fetchMarketplace(id, setMarketplace, setLoading);
     } catch (error) {
       toast.error("Buy offers failed");
     }
@@ -44,11 +42,8 @@ const MarketplacePage = () => {
   };
 
   useEffect(() => {
-    const fetchData = async () => {
-      await fetchMarketplace();
-    };
-    fetchData();
-  }, [id, fetchMarketplace]);
+    fetchMarketplace(id, setMarketplace, setLoading);
+  }, [id]);
 
   if (loading) return <Loading />;
 
@@ -150,7 +145,7 @@ const MarketplacePage = () => {
                 </button>
               </div>
               <button
-                onClick={handleBuyOffers}
+                onClick={() => handleBuyOffers(id)}
                 className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
               >
                 Buy Offers
