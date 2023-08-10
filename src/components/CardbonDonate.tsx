@@ -18,7 +18,7 @@ const CarbonDonate = ({ onDonatedCarbon, distance }: CarbonDonateProps) => {
             <p className="text-xl font-bold mb-2">Environmental Options:</p>
             <div className="flex justify-between space-y-2 items-center">
                 <div className="flex justify-start">
-                    <p>Donations : {(distance * 0.2).toFixed(2)} ฿</p>
+                    <p>Donations : {distance === null ? (distance * 0.2).toFixed(2) : 1} ฿</p>
                 </div>
                 <div className="flex justify-end">
                     <label className="relative inline-flex items-center cursor-pointer">
