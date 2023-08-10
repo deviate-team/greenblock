@@ -180,32 +180,40 @@ const CrowdFundingDetailPage = () => {
               <p className="mt-2">{project?.description}</p>
             </div>
           </div>
-          <div className="text-center mt-8 space-y-4">
-            <div className="flex gap-8 justify-center items-center">
-              <button
-                onClick={handleDecrease}
-                className=" p-1 rounded-full bg-white shadow-md"
-              >
-                <img src="/minus_icon.svg" alt="" className="w-4" />
-              </button>
-              <input type="number" value={offerValue}
-                className="w-32 text-center border border-gray-300 text-lg font-medium rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-primary-color focus:border-transparent appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
-                onChange={(e) => setOfferValue(parseInt(e.target.value))}
-              />
-              <button
-                onClick={handleIncrease}
-                className=" p-1 rounded-full bg-white shadow-md"
-              >
-                <img src="/plus_icon.svg" alt="" className="w-4" />
-              </button>
-            </div>
-            <button
-              onClick={handleBuy}
-              className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
-            >
-              Join
-            </button>
-          </div>
+          {
+            project?.balance < project?.max_shares ? (
+              <div className="text-center mt-8 space-y-4">
+                <div className="flex gap-8 justify-center items-center">
+                  <button
+                    onClick={handleDecrease}
+                    className=" p-1 rounded-full bg-white shadow-md"
+                  >
+                    <img src="/minus_icon.svg" alt="" className="w-4" />
+                  </button>
+                  <input type="number" value={offerValue}
+                    className="w-32 text-center border border-gray-300 text-lg font-medium rounded-md py-1 px-2 focus:outline-none focus:ring-2 focus:ring-primary-color focus:border-transparent appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                    onChange={(e) => setOfferValue(parseInt(e.target.value))}
+                  />
+                  <button
+                    onClick={handleIncrease}
+                    className=" p-1 rounded-full bg-white shadow-md"
+                  >
+                    <img src="/plus_icon.svg" alt="" className="w-4" />
+                  </button>
+                </div>
+                <button
+                  onClick={handleBuy}
+                  className="bg-primary-color text-white font-medium px-16 rounded-lg py-2 hover:bg-opacity-90"
+                >
+                  Join
+                </button>
+              </div>
+            ) : (
+              <p className="text-center mt-8 text-lg font-medium text-green-500">
+                This project is fully funded
+              </p>
+            )
+          }
         </div>
       )}{" "}
     </div>
