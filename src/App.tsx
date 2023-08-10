@@ -5,6 +5,7 @@ import BaseLayout from "@/layouts/BaseLayout";
 import AddMoneyPage from "@/pages/AddMoneyPage";
 import ContactPage from "@/pages/ContactPage";
 import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
+import CreateOffer from "@/pages/CreateOffer";
 import CreateTicketPage from "@/pages/CreateTicketPage";
 import CrowdFundingDetailPage from "@/pages/CrowdFundingDetailPage";
 import CrowdFundingPage from "@/pages/CrowdFundingPage";
@@ -38,6 +39,7 @@ const App = () => {
           <Route path="/create-crowdfunding" element={<CreateCrowdFundingPage />} />
           <Route path="/create-ticket" element={<CreateTicketPage />} />
           <Route path="/add-money" element={<AddMoneyPage />} />
+          <Route path="/create-offer" element={<CreateOffer />} />
         </Route >
         <Route element={<AuthLayout />}>
           <Route path="/login" element={<LoginPage />} />

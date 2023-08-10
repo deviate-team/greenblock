@@ -17,5 +17,5 @@ export interface ICreateOffer {
   price_per_kg: number;
   project_id: string;
   image_path: string;
-  available: number;
+  avaliable: number;
 }
