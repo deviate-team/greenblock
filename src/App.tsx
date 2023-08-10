@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import AuthLayout from "@/layouts/AuthLayout";
 import BaseLayout from "@/layouts/BaseLayout";
+import AddMoneyPage from "@/pages/AddMoneyPage";
 import ContactPage from "@/pages/ContactPage";
 import CreateCrowdFundingPage from "@/pages/CreateCrowdFundingPage";
 import CreateTicketPage from "@/pages/CreateTicketPage";
@@ -17,7 +18,6 @@ import ProfilePage from "@/pages/ProfilePage";
 import RegisterPage from "@/pages/RegisterPage";
 import SwapPage from "@/pages/SwapPage";
 import TicketPage from "@/pages/TicketPage";
-import AddMoneyPage from "./pages/AddMoneyPage";
 
 const App = () => {
   return (
