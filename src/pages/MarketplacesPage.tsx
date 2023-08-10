@@ -50,6 +50,14 @@ const MarketplacePage = () => {
         </h1>
         <p className="text-gray-500 mx-12 mt-4">Be a Climate Champion Today! Invest in Carbon Offsets, Donate for a Greener Tomorrow. Together, Let's Fight Climate Change and Protect Our Planet! </p>
       </div>
+      <div className="flex justify-center mb-10">
+        <Link to="/create-offer">
+          <button className="text-white bg-primary-color rounded-md px-4 py-2 hover:bg-primary-hover-color">
+            Create Offer
+          </button>
+        </Link>
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mx-10">
         {marketplace.map((data) => (
           <Link
